@@ -5,7 +5,7 @@ Euler exploits an undocumented feature of Swift that allows for custom operators
 
 ## Installation
 
-_The infrastructure and best practices for distributing Swift libraries is currently being developed by the developer community during this beta period of the language and Xcode. In the meantime, you can simply add Alamofire as a git submodule, and drag the `Alamofire.swift` file into your Xcode project._
+_The infrastructure and best practices for distributing Swift libraries is currently being developed by the developer community during this beta period of the language and Xcode. In the meantime, you can simply add Euler as a git submodule, and drag the `Euler.swift` file into your Xcode project._
 
 ---
 
