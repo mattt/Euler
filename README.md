@@ -5,7 +5,7 @@ Euler exploits an undocumented feature of Swift that allows for custom operators
 
 ## Installation
 
-_The infrastructure and best practices for distributing Swift libraries is currently being developed by the developer community during this beta period of the language and Xcode. In the meantime, you can simply add Alamofire as a git submodule, and drag the `Alamofire.swift` file into your Xcode project._
+_The infrastructure and best practices for distributing Swift libraries is currently being developed by the developer community during this beta period of the language and Xcode. In the meantime, you can simply add Euler as a git submodule, and drag the `Euler.swift` file into your Xcode project._
 
 ---
 
@@ -13,56 +13,58 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 
 ### Logic
 
-- `¬`
-- `∧`
-- `∨`
-- `∨`
-- `⊻`
-- `⊼`
-- `⊽`
-- `⊦`
+- `¬`, `~` - [Logical Negation](http://en.wikipedia.org/wiki/Negation)
+- `∧` - [Logical Conjunction](http://en.wikipedia.org/wiki/Logical_conjunction)
+- `∨` - [Logical Disjunction](http://en.wikipedia.org/wiki/Logical_disjunction)
+- `⊻`, `⊕`, `↮`, `≢` - [Logical XOR](http://en.wikipedia.org/wiki/Exclusive_or)
+- `⊼`, `↑` - [Logical NAND](http://en.wikipedia.org/wiki/Logical_NAND)
+- `⊽`, `↓` - [Logical NOR](http://en.wikipedia.org/wiki/Logical_NOR)
+- `⊦` - [Logical Assertion](http://en.wikipedia.org/wiki/Logical_Assertion)
 
 ## Arithmetic
 
-- `×`
-- `÷`
-- `∕`
-- `√`
-- `∛`
-- `±`
-- `±`
-- `∓`
-- `∓`
-- `∣`
-- `∤`
+- `×` - [Multiplication](http://en.wikipedia.org/wiki/Multiplication)
+- `÷`, `∕` - [Division](http://en.wikipedia.org/wiki/Division_%28mathematics%29)
+- `√` - [Square Root](http://en.wikipedia.org/wiki/Square_root)
+- `∛` - [Cube Root](http://en.wikipedia.org/wiki/Cube_root)
+- `±` - [Plus/Minus](http://en.wikipedia.org/wiki/Plus-minus_sign)
+- `∓` - [Minus/Plus](http://en.wikipedia.org/wiki/Plus-minus_sign#Minus-plus_sign)
+- `∣` - [Divides](http://en.wikipedia.org/wiki/Divisor)
+- `∤` - [Does Not Divide](http://en.wikipedia.org/wiki/Divisor)
 
 ## Sets
 
-- `∈`
-- `∋`
-- `∌`
-- `∩`
-- `∪`
-- `⊂`
-- `⊆`
-- `⊊`
-- `⊄`
-- `⊃`
-- `⊇`
-- `⊋`
+- `∈` - [Set Membership](http://en.wikipedia.org/wiki/Element_%28mathematics%29)
+- `∉` - [Set Non-Membership](http://en.wikipedia.org/wiki/Element_%28mathematics%29)
+- `∋` - [Converse Set Membership](http://en.wikipedia.org/wiki/Element_%28mathematics%29)
+- `∌` - [Converse Set Membership](http://en.wikipedia.org/wiki/Element_%28mathematics%29)
+- `∩` - [Set Intersection](http://en.wikipedia.org/wiki/Intersection_%28set_theory%29)
+- `∪` - [Set Union](http://en.wikipedia.org/wiki/Union_%28set_theory%29)
+- `⊆` - [Subset](http://en.wikipedia.org/wiki/Subset)
+- `⊂` - [Proper Subset](http://en.wikipedia.org/wiki/Subset)
+- `⊄` - [Not A Subset Of](http://en.wikipedia.org/wiki/Subset)
+- `⊇` - [Superset](http://en.wikipedia.org/wiki/Subset)
+- `⊃` - [Proper Superset](http://en.wikipedia.org/wiki/Subset)
+- `⊅` - [Not A Superset Of](http://en.wikipedia.org/wiki/Subset)
 
 ## Sequences
 
-- `∑`
-- `∏`
-- `⋅`
+- `∑` - [Summation](http://en.wikipedia.org/wiki/Summation)
+- `∏` - [Cartesian Product](http://en.wikipedia.org/wiki/Cartesian_product)
+
+## Vectors
+
+- `⋅` - [Dot Product](http://en.wikipedia.org/wiki/Dot_product)
 
 ## Comparison
 
-- `⩵`
-- `≤`
-- `≥`
-- `≬`
+- `⩵` - [Equality](http://en.wikipedia.org/wiki/Equality_%28mathematics%29)
+- `≠` - [Inequality](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
+- `≤` - [Less Than Or Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
+- `≨` - [Less Than And Not Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
+- `≥` - [Greater Than Or Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
+- `≩` - [Greater Than And Not Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
+- `≬` - [Between](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
 
 ---
 

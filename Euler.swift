@@ -25,49 +25,97 @@ import Foundation
 // Custom Operators Using Math Symbols
 // See: https://devforums.apple.com/message/1000934#1000934
 
-// MARK: - Logic
+// MARK: - Logic -
+
+// MARK: Negation
 
 prefix operator ¬ {}
 prefix func ¬ (value: Bool) -> Bool {
     return !value
 }
 
+prefix operator ~ {}
+prefix func ~ (value: Bool) -> Bool {
+    return !value
+}
+
+// MARK: Logical Conjunction
+
 infix operator ∧ { associativity left precedence 120 }
 func ∧ (left: Bool, right: Bool) -> Bool {
     return left && right
 }
+
+// MARK: Logical Disjunction
 
 infix operator ∨ { associativity left precedence 110 }
 func ∨ (left: Bool, right: Bool) -> Bool {
     return left || right
 }
 
+// MARK: Logical XOR
+
 infix operator ⊻ { associativity left precedence 140 }
 func ⊻ (left: Bool, right: Bool) -> Bool {
     return left ^ right
 }
+
+infix operator ⊕ { associativity left precedence 140 }
+func ⊕ (left: Bool, right: Bool) -> Bool {
+    return left ^ right
+}
+
+infix operator ↮ { associativity left precedence 140 }
+func ↮ (left: Bool, right: Bool) -> Bool {
+    return left ^ right
+}
+
+infix operator ≢ { associativity left precedence 140 }
+func ≢ (left: Bool, right: Bool) -> Bool {
+    return left ^ right
+}
+
+// MARK: Logical NAND
 
 infix operator ⊼ { associativity left precedence 120 }
 func ⊼ (left: Bool, right: Bool) -> Bool {
     return ¬(left ∧ right)
 }
 
+infix operator ↑ { associativity left precedence 120 }
+func ↑ (left: Bool, right: Bool) -> Bool {
+    return ¬(left ∧ right)
+}
+
+// MARK: Logical NOR
+
 infix operator ⊽ { associativity left precedence 110 }
 func ⊽ (left: Bool, right: Bool) -> Bool {
     return ¬(left ∨ right)
 }
+
+infix operator ↓ { associativity left precedence 110 }
+func ↓ (left: Bool, right: Bool) -> Bool {
+    return ¬(left ∨ right)
+}
+
+// MARK: Logical Assertion
 
 prefix operator ⊦ {}
 prefix func ⊦ (condition: @autoclosure () -> Bool) {
     assert(condition, "Assertion Failed")
 }
 
-// MARK: - Arithmetic
+// MARK: - Arithmetic -
+
+// MARK: Multiplication
 
 infix operator × { associativity left precedence 150 }
 func × (left: Double, right: Double) -> Double {
     return left * right
 }
+
+// MARK: Division
 
 infix operator ÷ { associativity left precedence 150 }
 func ÷ (left: Double, right: Double) -> Double {
@@ -79,15 +127,21 @@ func ∕ (left: Double, right: Double) -> Double {
     return left / right
 }
 
+// MARK: Square Root
+
 prefix operator √ {}
 prefix func √ (number: Double) -> Double {
     return sqrt(number)
 }
 
+// MARK: Cube Root
+
 prefix operator ∛ {}
 prefix func ∛ (number: Double) -> Double {
     return cbrt(number)
 }
+
+// MARK: Plus / Minus
 
 infix operator ± { associativity left precedence 140 }
 func ± (left: Double, right: Double) -> (Double, Double) {
@@ -99,6 +153,8 @@ prefix func ± (value: Double) -> (Double, Double) {
     return 0 ± value
 }
 
+// MARK: Minus / Plus
+
 infix operator ∓ { associativity left precedence 140 }
 func ∓ (left: Double, right: Double) -> (Double, Double) {
     return (left - right, left + right)
@@ -109,37 +165,51 @@ prefix func ∓ (value: Double) -> (Double, Double) {
     return 0 ∓ value
 }
 
+// MARK: Divides
+
 infix operator ∣ { associativity left precedence 150 }
 func ∣ (left: Int, right: Int) -> Bool {
     return left % right == 0
 }
+
+// MARK: Does Not Divide
 
 infix operator ∤ { associativity left }
 func ∤ (left: Int, right: Int) -> Bool {
     return ¬(left ∣ right)
 }
 
-// MARK: - Sets
+// MARK: Sets -
+
+// MARK: Set Membership
 
 infix operator ∈ { associativity left }
 func ∈<T: Equatable> (left: T, right: Array<T>) -> Bool {
     return contains(right, left)
 }
 
+// MARK: Set Non-Membership
+
 infix operator ∉ { associativity left }
 func ∉<T: Equatable> (left: T, right: Array<T>) -> Bool {
     return ¬(left ∈ right)
 }
+
+// MARK: Converse Set Membership
 
 infix operator ∋ { associativity left }
 func ∈<T: Equatable> (left: Array<T>, right: T) -> Bool {
     return right ∈ left
 }
 
+// MARK: Converse Set Non-Membership
+
 infix operator ∌ { associativity left }
 func ∌<T: Equatable> (left: Array<T>, right: T) -> Bool {
     return right ∉ left
 }
+
+// MARK: Set Intersection
 
 infix operator ∩ { associativity left }
 func ∩<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
@@ -153,6 +223,8 @@ func ∩<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
     return intersection
 }
 
+// MARK: Set Union
+
 infix operator ∪ { associativity left }
 func ∪<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
     var union: Array<T> = left
@@ -165,6 +237,15 @@ func ∪<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
     return union
 }
 
+// MARK: Subset
+
+infix operator ⊆ { associativity left }
+func ⊆<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+    return left == right || (left ⊂ right)
+}
+
+// MARK: Proper Subset
+
 infix operator ⊂ { associativity left }
 func ⊂<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
     for value in left {
@@ -176,47 +257,53 @@ func ⊂<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
     return true
 }
 
-infix operator ⊆ { associativity left }
-func ⊆<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
-    return left == right || (left ⊂ right)
-}
-
-infix operator ⊊ { associativity left }
-func ⊊<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
-    return left ⊂ right
-}
+// MARK: Not A Subset Of
 
 infix operator ⊄ { associativity left }
 func ⊄<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
     return ¬(left ⊂ right)
 }
 
-infix operator ⊃ { associativity left }
-func ⊃<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
-    return right ⊂ left
-}
+// MARK: Superset
 
 infix operator ⊇ { associativity left }
 func ⊇<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
     return right ⊆ left
 }
 
-infix operator ⊋ { associativity left }
-func ⊋<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
-    return left ⊃ right
+// MARK: Proper Superset
+
+infix operator ⊃ { associativity left }
+func ⊃<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+    return right ⊂ left
 }
 
-// MARK: - Sequences
+// MARK: Not A Superset Of
+
+infix operator ⊅ { associativity left }
+func ⊅<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+    return ¬(left ⊃ right)
+}
+
+// MARK: - Sequences -
+
+// MARK: Summation
 
 prefix operator ∑ {}
 prefix func ∑ (values: Array<Double>) -> Double {
     return reduce(values, 0.0, +)
 }
 
+// MARK: Cartesian Product
+
 prefix operator ∏ {}
 prefix func ∏ (values: Array<Double>) -> Double {
     return reduce(values, 1.0, *)
 }
+
+// MARK: - Vectors -
+
+// MARK: Dot Product
 
 infix operator ⋅ {}
 func ⋅ (left: Array<Double>, right: Array<Double>) -> Double? {
@@ -233,22 +320,51 @@ func ⋅ (left: Array<Double>, right: Array<Double>) -> Double? {
     return ∑product
 }
 
-// MARK: - Comparison
+// MARK: - Comparison -
+
+// MARK: Equality
 
 infix operator ⩵ { associativity left }
 func ⩵<T: Equatable> (left: T, right: T) -> Bool {
     return left == right
 }
 
+// MARK: Inequality
+
+infix operator ≠ { associativity left }
+func ≠<T: Equatable> (left: T, right: T) -> Bool {
+    return left != right
+}
+
+// MARK: Less Than Or Equal To
+
 infix operator ≤ { associativity left }
 func ≤<T: Comparable> (left: T, right: T) -> Bool {
     return left <= right
 }
 
+// MARK: Less Than And Not Equal To
+
+infix operator ≨ { associativity left }
+func ≨<T: Comparable> (left: T, right: T) -> Bool {
+    return left < right && left != right
+}
+
+// MARK: Greater Than Or Equal To
+
 infix operator ≥ { associativity left }
 func ≥<T: Comparable> (left: T, right: T) -> Bool {
     return left >= right
 }
+
+// MARK: Greater Than And Not Equal To
+
+infix operator ≩ { associativity left }
+func ≩<T: Comparable> (left: T, right: T) -> Bool {
+    return left > right && left != right
+}
+
+// MARK: Between
 
 infix operator ≬ { associativity left }
 func ≬<T: Comparable> (left: T, right: (T, T)) -> Bool {
