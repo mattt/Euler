@@ -1,7 +1,7 @@
 # Euler
 *Swift Custom Operators for Mathematical Notation*
 
-Euler exploits an undocumented feature of Swift that allows for custom operators using characters in the "Math Symbols" character set. While not recommended for production use, it would be great to include in a Playground for the purposes of teaching.
+Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_934) character set to implement functions using traditional mathematical notation. While not recommended for production use, it would be great to include in a Playground for the purposes of teaching.
 
 ## Installation
 
