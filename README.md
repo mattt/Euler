@@ -1,7 +1,11 @@
 # Euler
 *Swift Custom Operators for Mathematical Notation*
 
-Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_934) character set to implement functions using traditional mathematical notation. While not recommended for production use, it would be great to include in a Playground for the purposes of teaching.
+Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_934) character set to implement functions using traditional mathematical notation. 
+
+**Please keep in mind that this is not intended or recommended for production.** Custom operators of any breed are ripe for misuse and abuse, and should be used with as much care and caution as you would something like method swizzling or complex macros.
+
+Euler is much better-suited to a Playground, where it could be used for teaching and learning logic and mathematics using a more vernacular notation.
 
 ## Installation
 
