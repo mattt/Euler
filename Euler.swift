@@ -198,7 +198,7 @@ func ∉<T: Equatable> (left: T, right: Array<T>) -> Bool {
 // MARK: Converse Set Membership
 
 infix operator ∋ { associativity left }
-func ∈<T: Equatable> (left: Array<T>, right: T) -> Bool {
+func ∋<T: Equatable> (left: Array<T>, right: T) -> Bool {
     return right ∈ left
 }
 
