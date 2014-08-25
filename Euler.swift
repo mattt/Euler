@@ -306,10 +306,8 @@ prefix func ∏ (values: Array<Double>) -> Double {
 // MARK: Dot Product
 
 infix operator ⋅ {}
-func ⋅ (left: Array<Double>, right: Array<Double>) -> Double? {
-    if left.count != right.count {
-        return nil
-    }
+func ⋅ (left: Array<Double>, right: Array<Double>) -> Double {
+    precondition(left.count == right.count, "arguments must have same length")
 
     var product: Array<Double> = []
     for (index, _) in enumerate(left) {
@@ -330,12 +328,8 @@ prefix func ‖ (vector: [Double]) -> Double {
 // MARK: Angle
 
 infix operator ⦡ {}
-func ⦡ (left: [Double], right: [Double]) -> Double? {
-    if let dotProduct = (left ⋅ right) {
-        return acos(dotProduct / (‖left * ‖right))
-    }
-
-    return nil
+func ⦡ (left: [Double], right: [Double]) -> Double {
+    return acos((left ⋅ right) / (‖left * ‖right))
 }
 
 // MARK: - Comparison -
