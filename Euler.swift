@@ -337,15 +337,11 @@ prefix func ‖ (vector: Array<Double>) -> Double {
 
 infix operator ⦡ {}
 func ⦡ (left: Array<Double>, right: Array<Double>) -> Double? {
-    if left.count != right.count {
-        return nil
-    }
-    
     if let dotProduct = (left ⋅ right) {
         return acos(dotProduct / (‖left * ‖right))
+    } else {
+        return nil
     }
-    
-    return nil
 }
 
 // MARK: - Comparison -
