@@ -1,10 +1,12 @@
 # Euler
 
-Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_934) character set to implement functions using traditional mathematical notation. 
+Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_934) character set to implement functions using traditional mathematical notation.
 
 **Please keep in mind that this is not intended or recommended for production.** Custom operators of any breed are ripe for misuse and abuse, and should be used with as much care and caution as you would something like method swizzling or complex macros.
 
 Euler is much better-suited to a Playground, where it could be used for teaching and learning logic and mathematics using a more vernacular notation.
+
+> Euler is named after [Leonhard Euler](http://en.wikipedia.org/wiki/Leonhard_Euler), the Swiss mathematician credited for the popularization of modern mathematical notation, such as the Greek letters `Σ` for summation & `π` for the ratio of a circle's circumference to its diameter, the letters _`e`_ to denote the base of the natural logarithm & _`i`_ to denote the imaginary unit, `sin`, `cos`, et al. for trigonometric functions, and `f(x)` to denote the function `f` with argument `x`.
 
 ## Installation
 
