@@ -307,7 +307,7 @@ prefix func ∏ (values: [Double]) -> Double {
 
 infix operator ⋅ {}
 func ⋅ (left: [Double], right: [Double]) -> Double {
-    precondition(left.count == right.count, "arguments must have same length")
+    precondition(left.count == right.count, "arguments must have same count")
 
     var product: [Double] = []
     for (index, _) in enumerate(left) {
