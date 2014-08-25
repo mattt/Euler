@@ -227,9 +227,9 @@ func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
 
 infix operator ∪ { associativity left }
 func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
-    var union: [T] = left
-    for value in right {
-        if ¬(value ∈ left) {
+    var union: [T] = []
+    for value in left + right {
+        if ¬(value ∈ union) {
             union.append(value)
         }
     }
