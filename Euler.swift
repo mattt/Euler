@@ -290,14 +290,14 @@ func ⊅<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
 // MARK: Summation
 
 prefix operator ∑ {}
-prefix func ∑ (values: Array<Double>) -> Double {
+prefix func ∑ (values: [Double]) -> Double {
     return reduce(values, 0.0, +)
 }
 
 // MARK: Cartesian Product
 
 prefix operator ∏ {}
-prefix func ∏ (values: Array<Double>) -> Double {
+prefix func ∏ (values: [Double]) -> Double {
     return reduce(values, 1.0, *)
 }
 
@@ -306,10 +306,10 @@ prefix func ∏ (values: Array<Double>) -> Double {
 // MARK: Dot Product
 
 infix operator ⋅ {}
-func ⋅ (left: Array<Double>, right: Array<Double>) -> Double {
+func ⋅ (left: [Double], right: [Double]) -> Double {
     precondition(left.count == right.count, "arguments must have same length")
 
-    var product: Array<Double> = []
+    var product: [Double] = []
     for (index, _) in enumerate(left) {
         let (a, b) = (left[index], right[index])
         product.append(a * b)
