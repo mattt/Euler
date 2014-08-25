@@ -23,7 +23,7 @@
 import Foundation
 
 // Custom Operators Using Math Symbols
-// See: https://devforums.apple.com/message/1000934#1000934
+// See: https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-XID_85
 
 // MARK: - Logic -
 
