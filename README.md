@@ -16,6 +16,12 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 
 ## Inventory
 
+### Mathematical Constants
+
+- `π` - [Pi](http://en.wikipedia.org/wiki/Pi)
+- `𝝉` - [Tau](http://en.wikipedia.org/wiki/Tau_%282%CF%80%29#tau)
+- `𝑒` - [e](http://en.wikipedia.org/wiki/E_%28mathematical_constant%29)
+
 ### Logic
 
 - `¬`, `~` - [Logical Negation](http://en.wikipedia.org/wiki/Negation)

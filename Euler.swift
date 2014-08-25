@@ -25,6 +25,20 @@ import Foundation
 // Custom Operators Using Math Symbols
 // See: https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-XID_85
 
+// MARK: - Mathematical Constants -
+
+// MARK: Pi
+
+let π = M_PI
+
+// MARK: Tau
+
+let 𝝉 = M_PI * 2
+
+// MARK: e
+
+let 𝑒 = M_E
+
 // MARK: - Logic -
 
 // MARK: Negation
