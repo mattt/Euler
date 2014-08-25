@@ -184,36 +184,36 @@ func ∤ (left: Int, right: Int) -> Bool {
 // MARK: Set Membership
 
 infix operator ∈ { associativity left }
-func ∈<T: Equatable> (left: T, right: Array<T>) -> Bool {
+func ∈<T: Equatable> (left: T, right: [T]) -> Bool {
     return contains(right, left)
 }
 
 // MARK: Set Non-Membership
 
 infix operator ∉ { associativity left }
-func ∉<T: Equatable> (left: T, right: Array<T>) -> Bool {
+func ∉<T: Equatable> (left: T, right: [T]) -> Bool {
     return ¬(left ∈ right)
 }
 
 // MARK: Converse Set Membership
 
 infix operator ∋ { associativity left }
-func ∋<T: Equatable> (left: Array<T>, right: T) -> Bool {
+func ∋<T: Equatable> (left: [T], right: T) -> Bool {
     return right ∈ left
 }
 
 // MARK: Converse Set Non-Membership
 
 infix operator ∌ { associativity left }
-func ∌<T: Equatable> (left: Array<T>, right: T) -> Bool {
+func ∌<T: Equatable> (left: [T], right: T) -> Bool {
     return right ∉ left
 }
 
 // MARK: Set Intersection
 
 infix operator ∩ { associativity left }
-func ∩<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
-    var intersection: Array<T> = []
+func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
+    var intersection: [T] = []
     for value in left {
         if value ∈ right {
             intersection.append(value)
@@ -226,8 +226,8 @@ func ∩<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
 // MARK: Set Union
 
 infix operator ∪ { associativity left }
-func ∪<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
-    var union: Array<T> = left
+func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
+    var union: [T] = left
     for value in right {
         if ¬(value ∈ left) {
             union.append(value)
@@ -240,14 +240,14 @@ func ∪<T: Equatable> (left: Array<T>, right: Array<T>) -> Array<T> {
 // MARK: Subset
 
 infix operator ⊆ { associativity left }
-func ⊆<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+func ⊆<T: Equatable> (left: [T], right: [T]) -> Bool {
     return left == right || (left ⊂ right)
 }
 
 // MARK: Proper Subset
 
 infix operator ⊂ { associativity left }
-func ⊂<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
     for value in left {
         if ¬(value ∈ right) {
             return false
@@ -260,28 +260,28 @@ func ⊂<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
 // MARK: Not A Subset Of
 
 infix operator ⊄ { associativity left }
-func ⊄<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+func ⊄<T: Equatable> (left: [T], right: [T]) -> Bool {
     return ¬(left ⊂ right)
 }
 
 // MARK: Superset
 
 infix operator ⊇ { associativity left }
-func ⊇<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+func ⊇<T: Equatable> (left: [T], right: [T]) -> Bool {
     return right ⊆ left
 }
 
 // MARK: Proper Superset
 
 infix operator ⊃ { associativity left }
-func ⊃<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+func ⊃<T: Equatable> (left: [T], right: [T]) -> Bool {
     return right ⊂ left
 }
 
 // MARK: Not A Superset Of
 
 infix operator ⊅ { associativity left }
-func ⊅<T: Equatable> (left: Array<T>, right: Array<T>) -> Bool {
+func ⊅<T: Equatable> (left: [T], right: [T]) -> Bool {
     return ¬(left ⊃ right)
 }
 
