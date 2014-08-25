@@ -320,6 +320,34 @@ func ⋅ (left: Array<Double>, right: Array<Double>) -> Double? {
     return ∑product
 }
 
+// Mark: Norm
+
+prefix operator ‖ {}
+prefix func ‖ (vector: Array<Double>) -> Double {
+    var product: Array<Double> = []
+    
+    for (component) in vector {
+        product.append(component * component)
+    }
+    
+    return √(∑product)
+}
+
+// MARK: Angle
+
+infix operator ⦡ {}
+func ⦡ (left: Array<Double>, right: Array<Double>) -> Double? {
+    if left.count != right.count {
+        return nil
+    }
+    
+    if let dotProduct = (left ⋅ right) {
+        return acos(dotProduct / (‖left * ‖right))
+    }
+    
+    return nil
+}
+
 // MARK: - Comparison -
 
 // MARK: Equality
