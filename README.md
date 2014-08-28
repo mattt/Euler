@@ -6,7 +6,7 @@ Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/
 
 Euler is much better-suited to a Playground, where it could be used for teaching and learning logic and mathematics using a more vernacular notation.
 
-> Euler is named after [Leonhard Euler](http://en.wikipedia.org/wiki/Leonhard_Euler), the Swiss mathematician credited for the popularization of modern mathematical notation, such as the Greek letters `Σ` for summation & `π` for the ratio of a circle's circumference to its diameter, the letters _`e`_ to denote the base of the natural logarithm & _`i`_ to denote the imaginary unit, `sin`, `cos`, et al. for trigonometric functions, and `f(x)` to denote the function `f` with argument `x`.
+> Euler is named after [Leonhard Euler](http://en.wikipedia.org/wiki/Leonhard_Euler), the Swiss mathematician credited for the popularization of modern mathematical notation such as the Greek letters `Σ` for summation & `π` for the ratio of a circle's circumference to its diameter, the letters _`e`_ to denote the base of the natural logarithm & _`i`_ to denote the imaginary unit, `sin` & `cos` for trigonometric functions, and `f(x)` to denote the function `f` with argument `x`.
 
 ## Installation
 
