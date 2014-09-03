@@ -66,6 +66,7 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 ## Vectors
 
 - `⋅` - [Dot Product](http://en.wikipedia.org/wiki/Dot_product)
+- `×` - [Cross Product](http://en.wikipedia.org/wiki/Cross_product)
 - `‖` - [Vector Norm](http://en.wikipedia.org/wiki/Norm_%28mathematics%29)
 - `⦡` - [Angle Between Vectors](http://en.wikipedia.org/wiki/Dot_product)
 
