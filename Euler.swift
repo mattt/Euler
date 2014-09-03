@@ -233,7 +233,7 @@ func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
             intersection.append(value)
         }
     }
-
+    
     return intersection
 }
 
@@ -247,7 +247,7 @@ func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
             union.append(value)
         }
     }
-
+    
     return union
 }
 
@@ -267,7 +267,7 @@ func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
             return false
         }
     }
-
+    
     return true
 }
 
@@ -322,13 +322,13 @@ prefix func ∏ (values: [Double]) -> Double {
 infix operator ⋅ {}
 func ⋅ (left: [Double], right: [Double]) -> Double {
     precondition(left.count == right.count, "arguments must have same count")
-
+    
     var product: [Double] = []
     for (index, _) in enumerate(left) {
         let (a, b) = (left[index], right[index])
         product.append(a * b)
     }
-
+    
     return ∑product
 }
 
@@ -344,6 +344,18 @@ prefix func ‖ (vector: [Double]) -> Double {
 infix operator ⦡ {}
 func ⦡ (left: [Double], right: [Double]) -> Double {
     return acos((left ⋅ right) / (‖left * ‖right))
+}
+
+// MARK: Cross Product
+
+func × (left: [Double], right: [Double]) -> [Double] {
+    precondition(left.count == right.count, "vectors must both be in 3-space")
+    precondition(left.count == 3, "vectors must both be in 3-space")
+    
+    let a = left[1]*right[2] - left[2]*right[1]
+    let b = left[2]*right[0] - left[0]*right[2]
+    let c = left[0]*right[1] - left[1]*right[0]
+    return [a, b, c]
 }
 
 // MARK: - Comparison -
