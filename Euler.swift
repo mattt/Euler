@@ -233,7 +233,7 @@ func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
             intersection.append(value)
         }
     }
-
+    
     return intersection
 }
 
@@ -247,7 +247,7 @@ func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
             union.append(value)
         }
     }
-
+    
     return union
 }
 
@@ -267,7 +267,7 @@ func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
             return false
         }
     }
-
+    
     return true
 }
 
@@ -322,13 +322,13 @@ prefix func ∏ (values: [Double]) -> Double {
 infix operator ⋅ {}
 func ⋅ (left: [Double], right: [Double]) -> Double {
     precondition(left.count == right.count, "arguments must have same count")
-
+    
     var product: [Double] = []
     for (index, _) in enumerate(left) {
         let (a, b) = (left[index], right[index])
         product.append(a * b)
     }
-
+    
     return ∑product
 }
 
@@ -338,7 +338,7 @@ func × (left: (Double, Double, Double), right: (Double, Double, Double)) -> (Do
     let a = left.1 * right.2 - left.2 * right.1
     let b = left.2 * right.0 - left.0 * right.2
     let c = left.0 * right.1 - left.1 * right.0
-
+    
     return (a, b, c)
 }
 
@@ -405,4 +405,81 @@ func ≩<T: Comparable> (left: T, right: T) -> Bool {
 infix operator ≬ { associativity left }
 func ≬<T: Comparable> (left: T, right: (T, T)) -> Bool {
     return left > right.0 && left < right.1
+}
+
+// MARK: - Calculus -
+
+// MARK: 1st Derivative (Lagrange Notation)
+
+// Syntax to use (assume f is a function): let deriv = f′ OR (f′)(6) OR f′ (6)
+postfix operator ′ {}
+postfix func ′(function:(Double -> Double)) -> (Double -> Double) {
+    // This experimentally seems like a good value
+    // Don't use a value much smaller, otherwise floating point arithmetic starts to die
+    let h = 1e-3
+    return { x in
+        return (function(x + h) - function(x - h)) / (2*h)
+    }
+}
+
+// MARK: 2nd Derivative
+
+postfix operator ′′ {}
+postfix func ′′(function:(Double -> Double)) -> (Double -> Double) {
+    return (function′)′
+}
+
+// MARK: 3rd Derivative
+
+postfix operator ′′′ {}
+postfix func ′′′(function:(Double -> Double)) -> (Double -> Double) {
+    return ((function′)′)′
+}
+
+// MARK: N'th Derivative (not very accurate)
+// Syntax to use (assume f is a function): let deriv4 = f′4 OR (f′4)(6) OR f′ (6)
+infix operator ′ { associativity left }
+func ′(var left:(Double -> Double), right:UInt) -> (Double -> Double) {
+    for i in 0..<right {
+        left = left′
+    }
+    return left
+}
+
+// MARK: Definite Integral
+
+infix operator ∫ { associativity left }
+// Simpson's method for numeric integration: http://en.wikipedia.org/wiki/Simpson's_rule
+// Syntax to use (assume f is a function): (0, 6)∫f
+func ∫(left:(lowerBound:Double, upperBound:Double), right:(Double -> Double)) -> Double {
+    let h = 0.01 // Step size, adjust this?
+    let dist = left.upperBound - left.lowerBound
+    var numSteps:Int = Int(dist / h)
+    if numSteps % 2 != 0 {
+        numSteps++
+    }
+    numSteps = max(numSteps, 2)
+    
+    let realStepSize = dist / Double(numSteps)
+    
+    var sum = right(left.lowerBound)
+    for i in 0..<(numSteps - 1) {
+        let x = left.lowerBound + Double(i + 1)*realStepSize
+        let y = right(x)
+        let coefficient = i % 2 == 0 ? 4.0 : 2.0
+        sum += coefficient * y
+    }
+    sum += right(left.upperBound)
+    
+    return realStepSize*sum/3
+}
+
+// MARK: Indefinite Integral / Antiderivative
+// Syntax to use (assume f is a function): let F = ∫f
+prefix operator ∫ {}
+// This is a specific antiderivative such that F(0) = 0
+prefix func ∫(right:(Double -> Double)) -> (Double -> Double) {
+    return { x in
+        return (0, x)∫right
+    }
 }
