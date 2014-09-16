@@ -80,6 +80,11 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 - `≩` - [Greater Than And Not Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
 - `≬` - [Between](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
 
+## Calculus
+
+- `′` - [Derivative](http://en.wikipedia.org/wiki/Derivative)
+- `∫` - [Integral (Definite & Indefinite)](http://en.wikipedia.org/wiki/Derivative)
+
 ---
 
 ## Contact
