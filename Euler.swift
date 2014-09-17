@@ -155,6 +155,13 @@ prefix func ∛ (number: Double) -> Double {
     return cbrt(number)
 }
 
+// MARK: Tesseract Root
+
+prefix operator ∜ {}
+prefix func ∜ (number: Double) -> Double {
+    return pow(number, 1.0 / 4.0)
+}
+
 // MARK: Plus / Minus
 
 infix operator ± { associativity left precedence 140 }

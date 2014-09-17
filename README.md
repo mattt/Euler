@@ -38,6 +38,7 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 - `÷`, `∕` - [Division](http://en.wikipedia.org/wiki/Division_%28mathematics%29)
 - `√` - [Square Root](http://en.wikipedia.org/wiki/Square_root)
 - `∛` - [Cube Root](http://en.wikipedia.org/wiki/Cube_root)
+- `∜` - [Tesseract Root](http://en.wikipedia.org/wiki/Nth_root)
 - `±` - [Plus/Minus](http://en.wikipedia.org/wiki/Plus-minus_sign)
 - `∓` - [Minus/Plus](http://en.wikipedia.org/wiki/Plus-minus_sign#Minus-plus_sign)
 - `∣` - [Divides](http://en.wikipedia.org/wiki/Divisor)
