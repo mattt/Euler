@@ -79,6 +79,8 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 - `≥` - [Greater Than Or Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
 - `≩` - [Greater Than And Not Equal To](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
 - `≬` - [Between](http://en.wikipedia.org/wiki/Inequality_%28mathematics%29)
+- `≈` - [Approximate Equality](http://en.wikipedia.org/wiki/Approximation)
+- `≉` - [Approximate Inequality](http://en.wikipedia.org/wiki/Approximation)
 
 ## Calculus
 
