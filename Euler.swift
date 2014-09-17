@@ -233,7 +233,7 @@ func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
             intersection.append(value)
         }
     }
-
+    
     return intersection
 }
 
@@ -247,7 +247,7 @@ func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
             union.append(value)
         }
     }
-
+    
     return union
 }
 
@@ -267,7 +267,7 @@ func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
             return false
         }
     }
-
+    
     return true
 }
 
@@ -322,13 +322,13 @@ prefix func ∏ (values: [Double]) -> Double {
 infix operator ⋅ {}
 func ⋅ (left: [Double], right: [Double]) -> Double {
     precondition(left.count == right.count, "arguments must have same count")
-
+    
     var product: [Double] = []
     for (index, _) in enumerate(left) {
         let (a, b) = (left[index], right[index])
         product.append(a * b)
     }
-
+    
     return ∑product
 }
 
@@ -338,7 +338,7 @@ func × (left: (Double, Double, Double), right: (Double, Double, Double)) -> (Do
     let a = left.1 * right.2 - left.2 * right.1
     let b = left.2 * right.0 - left.0 * right.2
     let c = left.0 * right.1 - left.1 * right.0
-
+    
     return (a, b, c)
 }
 
@@ -405,4 +405,61 @@ func ≩<T: Comparable> (left: T, right: T) -> Bool {
 infix operator ≬ { associativity left }
 func ≬<T: Comparable> (left: T, right: (T, T)) -> Bool {
     return left > right.0 && left < right.1
+}
+
+// MARK: - Calculus -
+
+// MARK: 1st Derivative
+
+postfix operator ′ {}
+postfix func ′(function: (Double) -> (Double)) -> (Double) -> (Double) {
+    let h = 1e-3
+    return { (x) in
+        return round((function(x + h) - function(x - h)) / (2 * h) / h) * h
+    }
+}
+
+// MARK: 2nd Derivative
+
+postfix operator ′′ {}
+postfix func ′′(function: (Double) -> (Double)) -> (Double) -> (Double) {
+    return (function′)′
+}
+
+// MARK: 3rd Derivative
+
+postfix operator ′′′ {}
+postfix func ′′′(function: (Double) -> (Double)) -> (Double) -> (Double) {
+    return ((function′)′)′
+}
+
+// MARK: Nth Derivative
+
+infix operator ′ { associativity left }
+func ′(var left: (Double -> Double), right: UInt) -> (Double) -> (Double) {
+    return reduce(0..<right, left) { (function, _) in
+        return function′
+    }
+}
+
+// MARK: Definite Integral
+
+infix operator ∫ { associativity left }
+func ∫(left: (a: Double, b: Double), right: (Double) -> (Double)) -> Double {
+    let n: Int = 1e2 + 1
+    let h = (left.b - left.a) / Double(n)
+
+    return (h / 3.0) * reduce(1..<n, right(left.a)) {
+        let coefficient = $1 % 2 == 0 ? 4.0 : 2.0
+        return $0 + coefficient * right(left.a + Double($1) * h)
+    }
+}
+
+// MARK: Indefinite Integral / Antiderivative
+
+prefix operator ∫ {}
+prefix func ∫(function: (Double) -> (Double)) -> (Double) -> (Double) {
+    return { x in
+        return (0, x)∫function
+    }
 }
