@@ -88,6 +88,10 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 - `′`, `′′`, `′′′` - [Derivative (1st, 2nd, 3rd, and Nth Order)](http://en.wikipedia.org/wiki/Derivative#Lagrange.27s_notation)
 - `∫` - [Integral (Definite & Indefinite)](http://en.wikipedia.org/wiki/Integral)
 
+## Functions
+
+- `∘` - [Composition](http://en.wikipedia.org/wiki/Function_composition)
+
 ---
 
 ## Contact

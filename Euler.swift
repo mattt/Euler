@@ -486,3 +486,14 @@ prefix func ∫(function: (Double) -> (Double)) -> (Double) -> (Double) {
         return (0, x)∫function
     }
 }
+
+// MARK: - Functions -
+
+// MARK: Composition
+
+infix operator ∘ { associativity left }
+func ∘<T>(left: (T) -> (T), right: (T) -> (T)) -> (T) -> (T) {
+    return { (x) in
+        left(right(x))
+    }
+}
