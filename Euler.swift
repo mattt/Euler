@@ -469,7 +469,7 @@ func ′(var left: (Double -> Double), right: UInt) -> (Double) -> (Double) {
 
 infix operator ∫ { associativity left }
 func ∫(left: (a: Double, b: Double), right: (Double) -> (Double)) -> Double {
-    let n: Int = 1e2 + 1
+    let n = Int(1e2 + 1)
     let h = (left.b - left.a) / Double(n)
 
     return (h / 3.0) * reduce(1..<n, right(left.a)) {
