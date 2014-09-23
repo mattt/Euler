@@ -390,7 +390,7 @@ func ≤<T: Comparable> (left: T, right: T) -> Bool {
 
 infix operator ≨ { associativity left }
 func ≨<T: Comparable> (left: T, right: T) -> Bool {
-    return left < right && left != right
+    return left < right
 }
 
 // MARK: Greater Than Or Equal To
@@ -404,7 +404,7 @@ func ≥<T: Comparable> (left: T, right: T) -> Bool {
 
 infix operator ≩ { associativity left }
 func ≩<T: Comparable> (left: T, right: T) -> Bool {
-    return left > right && left != right
+    return left > right
 }
 
 // MARK: Between
