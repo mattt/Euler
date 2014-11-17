@@ -41,6 +41,10 @@ let 𝑒 = M_E
 
 // MARK: - Logic -
 
+// MARK: Phi
+
+let Ø : AnyObject? = AnyObject?()
+
 // MARK: Negation
 
 prefix operator ¬ {}
