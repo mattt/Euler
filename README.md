@@ -24,7 +24,7 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 
 ### Logic
 
-- `Ø` - [nil]
+- `Ø` - [Null/nil](http://en.wikipedia.org/wiki/Null_(mathematics))
 - `¬`, `~` - [Logical Negation](http://en.wikipedia.org/wiki/Negation)
 - `∧` - [Logical Conjunction](http://en.wikipedia.org/wiki/Logical_conjunction)
 - `∨` - [Logical Disjunction](http://en.wikipedia.org/wiki/Logical_disjunction)
