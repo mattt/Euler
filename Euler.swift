@@ -71,22 +71,22 @@ func ∨ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
 
 infix operator ⊻ { associativity left precedence 140 }
 func ⊻ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
-    return left ^ right()
+    return left != right()
 }
 
 infix operator ⊕ { associativity left precedence 140 }
 func ⊕ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
-    return left ^ right()
+    return left != right()
 }
 
 infix operator ↮ { associativity left precedence 140 }
 func ↮ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
-    return left ^ right()
+    return left != right()
 }
 
 infix operator ≢ { associativity left precedence 140 }
 func ≢ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
-    return left ^ right()
+    return left != right()
 }
 
 // MARK: Logical NAND
