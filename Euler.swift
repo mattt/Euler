@@ -117,7 +117,7 @@ func ↓ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
 
 prefix operator ⊦ {}
 prefix func ⊦ (@autoclosure condition:  () -> Bool) {
-    assert(condition, "Assertion Failed")
+    assert(condition(), "Assertion Failed")
 }
 
 // MARK: - Arithmetic -
