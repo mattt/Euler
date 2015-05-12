@@ -190,7 +190,7 @@ prefix func ∓ (value: Double) -> (Double, Double) {
 
 infix operator ∣ { associativity left precedence 150 }
 func ∣ (left: Int, right: Int) -> Bool {
-    return left &% right == 0
+    return left % right == 0
 }
 
 // MARK: Does Not Divide
