@@ -56,67 +56,67 @@ prefix func ~ (value: Bool) -> Bool {
 // MARK: Logical Conjunction
 
 infix operator ∧ { associativity left precedence 120 }
-func ∧ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ∧ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return left && right()
 }
 
 // MARK: Logical Disjunction
 
 infix operator ∨ { associativity left precedence 110 }
-func ∨ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ∨ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return left || right()
 }
 
 // MARK: Logical XOR
 
 infix operator ⊻ { associativity left precedence 140 }
-func ⊻ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ⊻ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return left ^ right()
 }
 
 infix operator ⊕ { associativity left precedence 140 }
-func ⊕ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ⊕ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return left ^ right()
 }
 
 infix operator ↮ { associativity left precedence 140 }
-func ↮ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ↮ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return left ^ right()
 }
 
 infix operator ≢ { associativity left precedence 140 }
-func ≢ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ≢ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return left ^ right()
 }
 
 // MARK: Logical NAND
 
 infix operator ⊼ { associativity left precedence 120 }
-func ⊼ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ⊼ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return ¬(left ∧ right())
 }
 
 infix operator ↑ { associativity left precedence 120 }
-func ↑ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ↑ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return ¬(left ∧ right())
 }
 
 // MARK: Logical NOR
 
 infix operator ⊽ { associativity left precedence 110 }
-func ⊽ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ⊽ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return ¬(left ∨ right())
 }
 
 infix operator ↓ { associativity left precedence 110 }
-func ↓ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
+func ↓ (left: Bool, @autoclosure right:  () -> Bool) -> Bool {
     return ¬(left ∨ right())
 }
 
 // MARK: Logical Assertion
 
 prefix operator ⊦ {}
-prefix func ⊦ (condition: @autoclosure () -> Bool) {
+prefix func ⊦ (@autoclosure condition:  () -> Bool) {
     assert(condition, "Assertion Failed")
 }
 
