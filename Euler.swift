@@ -209,10 +209,18 @@ func ∈<T: Equatable> (left: T, right: [T]) -> Bool {
     return contains(right, left)
 }
 
+func ∈<T> (left: T, right: Set<T>) -> Bool {
+    return right.contains(left)
+}
+
 // MARK: Set Non-Membership
 
 infix operator ∉ { associativity left }
 func ∉<T: Equatable> (left: T, right: [T]) -> Bool {
+    return ¬(left ∈ right)
+}
+
+func ∉<T> (left: T, right: Set<T>) -> Bool {
     return ¬(left ∈ right)
 }
 
@@ -223,10 +231,18 @@ func ∋<T: Equatable> (left: [T], right: T) -> Bool {
     return right ∈ left
 }
 
+func ∋<T> (left: Set<T>, right: T) -> Bool {
+    return right ∈ left
+}
+
 // MARK: Converse Set Non-Membership
 
 infix operator ∌ { associativity left }
 func ∌<T: Equatable> (left: [T], right: T) -> Bool {
+    return right ∉ left
+}
+
+func ∌<T> (left: Set<T>, right: T) -> Bool {
     return right ∉ left
 }
 
@@ -244,6 +260,10 @@ func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
     return intersection
 }
 
+func ∩<T> (left: Set<T>, right: Set<T>) -> Set<T> {
+    return left.intersect(right)
+}
+
 // MARK: Set Union
 
 infix operator ∪ { associativity left }
@@ -258,11 +278,19 @@ func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
     return union
 }
 
+func ∪<T> (left: Set<T>, right: Set<T>) -> Set<T> {
+    return left.union(right)
+}
+
 // MARK: Subset
 
 infix operator ⊆ { associativity left }
 func ⊆<T: Equatable> (left: [T], right: [T]) -> Bool {
     return left == right || (left ⊂ right)
+}
+
+func ⊆<T> (left: Set<T>, right: Set<T>) -> Bool {
+    return left.isSubsetOf(right)
 }
 
 // MARK: Proper Subset
@@ -278,10 +306,18 @@ func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
     return true
 }
 
+func ⊂<T> (left: Set<T>, right: Set<T>) -> Bool {
+    return left.isStrictSubsetOf(right)
+}
+
 // MARK: Not A Subset Of
 
 infix operator ⊄ { associativity left }
 func ⊄<T: Equatable> (left: [T], right: [T]) -> Bool {
+    return ¬(left ⊂ right)
+}
+
+func ⊄<T> (left: Set<T>, right: Set<T>) -> Bool {
     return ¬(left ⊂ right)
 }
 
@@ -292,6 +328,10 @@ func ⊇<T: Equatable> (left: [T], right: [T]) -> Bool {
     return right ⊆ left
 }
 
+func ⊇<T> (left: Set<T>, right: Set<T>) -> Bool {
+    return right ⊆ left
+}
+
 // MARK: Proper Superset
 
 infix operator ⊃ { associativity left }
@@ -299,10 +339,18 @@ func ⊃<T: Equatable> (left: [T], right: [T]) -> Bool {
     return right ⊂ left
 }
 
+func ⊃<T> (left: Set<T>, right: Set<T>) -> Bool {
+    return right ⊂ left
+}
+
 // MARK: Not A Superset Of
 
 infix operator ⊅ { associativity left }
 func ⊅<T: Equatable> (left: [T], right: [T]) -> Bool {
+    return ¬(left ⊃ right)
+}
+
+func ⊅<T> (left: Set<T>, right: Set<T>) -> Bool {
     return ¬(left ⊃ right)
 }
 
