@@ -535,7 +535,7 @@ prefix func ∫(function: (Double) -> (Double)) -> (Double) -> (Double) {
 // MARK: Composition
 
 infix operator ∘ { associativity left }
-func ∘<T>(left: (T) -> (T), right: (T) -> (T)) -> (T) -> (T) {
+func ∘<T, U, V>(left: (U) -> (V), right: (T) -> (U)) -> (T) -> (V) {
     return { (x) in
         left(right(x))
     }
