@@ -206,7 +206,7 @@ func ∤ (left: Int, right: Int) -> Bool {
 
 infix operator ∈ { associativity left }
 func ∈<T: Equatable> (left: T, right: [T]) -> Bool {
-    return contains(right, left)
+    return right.contains(left)
 }
 
 func ∈<T> (left: T, right: Set<T>) -> Bool {
@@ -360,14 +360,14 @@ func ⊅<T> (left: Set<T>, right: Set<T>) -> Bool {
 
 prefix operator ∑ {}
 prefix func ∑ (values: [Double]) -> Double {
-    return reduce(values, 0.0, +)
+    return values.reduce(0.0, combine: +)
 }
 
 // MARK: Cartesian Product
 
 prefix operator ∏ {}
 prefix func ∏ (values: [Double]) -> Double {
-    return reduce(values, 1.0, *)
+    return values.reduce(1.0, combine: *)
 }
 
 // MARK: - Vectors -
@@ -378,12 +378,7 @@ infix operator ⋅ {}
 func ⋅ (left: [Double], right: [Double]) -> Double {
     precondition(left.count == right.count, "arguments must have same count")
 
-    var product: [Double] = []
-    for (index, _) in enumerate(left) {
-        let (a, b) = (left[index], right[index])
-        product.append(a * b)
-    }
-
+    let product = zip(left, right).map { (l, r) in l * r }
     return ∑product
 }
 
@@ -507,8 +502,8 @@ postfix func ′′′(function: (Double) -> (Double)) -> (Double) -> (Double) {
 // MARK: Nth Derivative
 
 infix operator ′ { associativity left }
-func ′(var left: (Double -> Double), right: UInt) -> (Double) -> (Double) {
-    return reduce(0..<right, left) { (function, _) in
+func ′(left: (Double -> Double), right: UInt) -> (Double) -> (Double) {
+    return (0 ..< right).reduce(left) { (function, _) in
         return function′
     }
 }
@@ -520,10 +515,10 @@ func ∫(left: (a: Double, b: Double), right: (Double) -> (Double)) -> Double {
     let n = Int(1e2 + 1)
     let h = (left.b - left.a) / Double(n)
 
-    return (h / 3.0) * (reduce(1..<n, right(left.a)) {
+    return (h / 3.0) * (1 ..< n).reduce(right(left.a)) {
         let coefficient = $1 % 2 == 0 ? 4.0 : 2.0
         return $0 + coefficient * right(left.a + Double($1) * h)
-    } + right(left.b))
+    } + right(left.b)
 }
 
 // MARK: Indefinite Integral / Antiderivative
