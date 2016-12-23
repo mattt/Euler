@@ -39,6 +39,10 @@ let 𝝉 = M_PI * 2
 
 let 𝑒 = M_E
 
+// MARK: Golden ratio
+
+let φ = sqrt(5)/2 + 0.5
+
 // MARK: - Logic -
 
 // MARK: Negation
