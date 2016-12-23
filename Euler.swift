@@ -190,7 +190,7 @@ prefix func ∓ (value: Double) -> (Double, Double) {
 
 infix operator ∣ { associativity left precedence 150 }
 func ∣ (left: Int, right: Int) -> Bool {
-    return left % right == 0
+    return left &% right == 0
 }
 
 // MARK: Does Not Divide
@@ -438,7 +438,7 @@ func ≤<T: Comparable> (left: T, right: T) -> Bool {
 
 infix operator ≨ { associativity left }
 func ≨<T: Comparable> (left: T, right: T) -> Bool {
-    return left < right && left != right
+    return left < right
 }
 
 // MARK: Greater Than Or Equal To
@@ -452,7 +452,7 @@ func ≥<T: Comparable> (left: T, right: T) -> Bool {
 
 infix operator ≩ { associativity left }
 func ≩<T: Comparable> (left: T, right: T) -> Bool {
-    return left > right && left != right
+    return left > right
 }
 
 // MARK: Between
