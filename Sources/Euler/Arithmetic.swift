@@ -1,3 +1,5 @@
+import Foundation
+
 // MARK: Multiplication
 
 infix operator × : MultiplicationPrecedence

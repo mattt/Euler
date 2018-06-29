@@ -1,3 +1,5 @@
+import Foundation
+
 // MARK: Dot Product
 
 infix operator ⋅

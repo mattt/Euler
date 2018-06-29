@@ -1,3 +1,5 @@
+import Foundation
+
 // MARK: Equality
 
 infix operator ⩵ : ComparisonPrecedence

@@ -1,3 +1,5 @@
+import Foundation
+
 // MARK: 1st Derivative
 
 postfix operator ′
