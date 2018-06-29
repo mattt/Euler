@@ -8,10 +8,6 @@ Euler is much better-suited to a Playground, where it could be used for teaching
 
 > Euler is named after [Leonhard Euler](http://en.wikipedia.org/wiki/Leonhard_Euler), the Swiss mathematician credited for the popularization of modern mathematical notation such as the Greek letters `Σ` for summation & `π` for the ratio of a circle's circumference to its diameter, the letters _`e`_ to denote the base of the natural logarithm & _`i`_ to denote the imaginary unit, `sin` & `cos` for trigonometric functions, and `f(x)` to denote the function `f` with argument `x`.
 
-## Installation
-
-_The infrastructure and best practices for distributing Swift libraries is currently being developed by the developer community during this beta period of the language and Xcode. In the meantime, you can simply add Euler as a git submodule, and drag the `Euler.swift` file into your Xcode project._
-
 ---
 
 ## Inventory
