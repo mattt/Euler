@@ -23,7 +23,7 @@
 import Foundation
 
 // Custom Operators Using Math Symbols
-// See: https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-XID_85
+// See: https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID418
 
 // MARK: - Mathematical Constants -
 
