@@ -34,10 +34,18 @@ public prefix func √ (number: Double) -> Double {
     return sqrt(number)
 }
 
+public prefix func √ (number: Float) -> Float {
+    return sqrt(number)
+}
+
 // MARK: Cube Root
 
 prefix operator ∛
 public prefix func ∛ (number: Double) -> Double {
+    return cbrt(number)
+}
+
+public prefix func ∛ (number: Float) -> Float {
     return cbrt(number)
 }
 

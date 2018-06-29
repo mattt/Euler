@@ -5,8 +5,8 @@ import Foundation
 postfix operator ′
 public postfix func ′(function: @escaping (Double) -> (Double)) -> (Double) -> (Double) {
     let h = 1e-3
-    return { (x) in
-        return round((function(x + h) - function(x - h)) / (2 * h) / h) * h
+    return {
+        return round((function($0 + h) - function($0 - h)) / (2 * h) / h) * h
     }
 }
 

@@ -32,9 +32,17 @@ public prefix func ‖ (vector: [Double]) -> Double {
     return √(∑vector.map({$0 * $0}))
 }
 
+public prefix func ‖ (vector: [Float]) -> Float {
+    return √(∑vector.map({$0 * $0}))
+}
+
 // MARK: Angle
 
 infix operator ⦡
 public func ⦡ (lhs: [Double], rhs: [Double]) -> Double {
+    return acos((lhs ⋅ rhs) / (‖lhs * ‖rhs))
+}
+
+public func ⦡ (lhs: [Float], rhs: [Float]) -> Float {
     return acos((lhs ⋅ rhs) / (‖lhs * ‖rhs))
 }
