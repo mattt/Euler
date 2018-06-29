@@ -53,8 +53,7 @@ public func ≬<T: Comparable> (lhs: T, rhs: (T, T)) -> Bool {
 
 infix operator ≈ : ComparisonPrecedence
 public func ≈(lhs: Double, rhs: Double) -> Bool {
-    let 𝜺 = 1e-3
-    return abs(nextafter(lhs, rhs) - rhs) < 𝜺
+    return lhs == rhs || lhs.nextDown == rhs || lhs.nextUp == rhs
 }
 
 // MARK: Approximate Inequality
