@@ -1,22 +1,43 @@
 import XCTest
 @testable import Euler
 
-final class ConstantsTests: XCTestCase {
-    func testPi() {
-        XCTAssertEqual(π, Double.pi)
+final class LogicTests: XCTestCase {
+    func testLogicalNegation() {
+        XCTAssertEqual(¬true, !true)
+        XCTAssertEqual(~true, !true)
     }
     
-    func testTau() {
-        XCTAssertEqual(𝝉, Double.pi * 2)
+    func testLogicalConjunction() {
+        XCTAssertEqual(true ∧ false, true && false)
     }
     
-    func testE() {
-        XCTAssertEqual(𝑒, M_E)
+    func testLogicalDisjunction() {
+        XCTAssertEqual(true ∨ false, true || false)
     }
-
+    
+//    func testLogicalXOR() {
+//        XCTAssertEqual(true ⊻ false, true ^ false)
+//        XCTAssertEqual(true ⊕ false, true ^ false)
+//        XCTAssertEqual(true ↮ false, true ^ false)
+//        XCTAssertEqual(true ≢ false, true ^ false)
+//    }
+    
+//    func testLogicalNAND() {
+//        XCTAssertEqual(true ⊼ false, !(true ^ false))
+//        XCTAssertEqual(true ↑ false, !(true ^ false))
+//    }
+    
+    func testLogicalNOR() {
+        XCTAssertEqual(true ⊽ false, !(true || false))
+        XCTAssertEqual(true ↓ false, !(true || false))
+    }
+    
     static var allTests = [
-        ("testPi", testPi),
-        ("testTau", testTau),
-        ("testE", testE)
+        ("testLogicalNegation", testLogicalNegation),
+        ("testLogicalConjunction", testLogicalConjunction),
+        ("testLogicalDisjunction", testLogicalDisjunction),
+//        ("testLogicalXOR", testLogicalXOR),
+//        ("testLogicalNAND", testLogicalNAND),
+        ("testLogicalNOR", testLogicalNOR)
     ]
 }
