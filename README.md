@@ -1,6 +1,6 @@
 # Euler
 
-Euler uses [custom operators in the "Math Symbols"](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_934) character set to implement functions using traditional mathematical notation.
+Euler uses [custom operators in the "Math Symbols"](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID418) character set to implement functions using traditional mathematical notation.
 
 **Please keep in mind that this is not intended or recommended for production.** Custom operators of any breed are ripe for misuse and abuse, and should be used with as much care and caution as you would something like method swizzling or complex macros.
 
@@ -94,14 +94,10 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 
 ---
 
-## Contact
-
-Mattt Thompson
-
-- http://github.com/mattt
-- http://twitter.com/mattt
-- m@mattt.me
-
 ## License
 
-Euler is available under the MIT license. See the LICENSE file for more info.
+MIT
+
+## Contact
+
+Mattt ([@mattt](https://twitter.com/mattt)
