@@ -13,61 +13,61 @@ prefix func ~ (value: Bool) -> Bool {
 // MARK: Logical Conjunction
 
 infix operator ∧ : LogicalConjunctionPrecedence
-func ∧ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return left && right()
+func ∧ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return lhs && rhs()
 }
 
 // MARK: Logical Disjunction
 
 infix operator ∨ : LogicalDisjunctionPrecedence
-func ∨ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return left || right()
+func ∨ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return lhs || rhs()
 }
 
 // MARK: Logical XOR
 
 infix operator ⊻ : LogicalDisjunctionPrecedence
-func ⊻ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return left != right()
+func ⊻ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return lhs != rhs()
 }
 
 infix operator ⊕ : LogicalDisjunctionPrecedence
-func ⊕ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return left != right()
+func ⊕ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return lhs != rhs()
 }
 
 infix operator ↮ : LogicalDisjunctionPrecedence
-func ↮ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return left != right()
+func ↮ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return lhs != rhs()
 }
 
 infix operator ≢ : LogicalDisjunctionPrecedence
-func ≢ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return left != right()
+func ≢ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return lhs != rhs()
 }
 
 // MARK: Logical NAND
 
 infix operator ⊼ : LogicalConjunctionPrecedence
-func ⊼ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return ¬(left ∧ right())
+func ⊼ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return ¬(lhs ∧ rhs())
 }
 
 infix operator ↑ : LogicalConjunctionPrecedence
-func ↑ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return ¬(left ∧ right())
+func ↑ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return ¬(lhs ∧ rhs())
 }
 
 // MARK: Logical NOR
 
 infix operator ⊽ : LogicalDisjunctionPrecedence
-func ⊽ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return ¬(left ∨ right())
+func ⊽ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return ¬(lhs ∨ rhs())
 }
 
 infix operator ↓ : LogicalDisjunctionPrecedence
-func ↓ (left: Bool, right: @autoclosure () -> Bool) -> Bool {
-    return ¬(left ∨ right())
+func ↓ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+    return ¬(lhs ∨ rhs())
 }
 
 // MARK: Logical Assertion

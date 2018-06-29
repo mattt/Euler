@@ -27,8 +27,8 @@ postfix func ′′′(function: @escaping (Double) -> (Double)) -> (Double) -> 
 // MARK: Nth Derivative
 
 infix operator ′ : MultiplicationPrecedence
-func ′(left: inout (Double) -> Double, right: UInt) -> (Double) -> (Double) {
-    return (0..<right).reduce(left) { (function, _) in
+func ′(lhs: inout (Double) -> Double, rhs: UInt) -> (Double) -> (Double) {
+    return (0..<rhs).reduce(lhs) { (function, _) in
         return function′
     }
 }
@@ -36,14 +36,14 @@ func ′(left: inout (Double) -> Double, right: UInt) -> (Double) -> (Double) {
 // MARK: Definite Integral
 
 infix operator ∫ : MultiplicationPrecedence
-func ∫(left: (a: Double, b: Double), right: (Double) -> (Double)) -> Double {
+func ∫(lhs: (a: Double, b: Double), rhs: (Double) -> (Double)) -> Double {
     let n = Int(1e2 + 1)
-    let h = (left.b - left.a) / Double(n)
+    let h = (lhs.b - lhs.a) / Double(n)
     
-    return (h / 3.0) * (1..<n).reduce(right(left.a)) {
+    return (h / 3.0) * (1..<n).reduce(rhs(lhs.a)) {
         let coefficient = $1 % 2 == 0 ? 4.0 : 2.0
-        return $0 + coefficient * right(left.a + Double($1) * h)
-        } + right(left.b)
+        return $0 + coefficient * rhs(lhs.a + Double($1) * h)
+        } + rhs(lhs.b)
 }
 
 // MARK: Indefinite Integral / Antiderivative

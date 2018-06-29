@@ -1,54 +1,54 @@
 // MARK: Set Membership
 
 infix operator ∈ : ComparisonPrecedence
-func ∈<T: Equatable> (left: T, right: [T]) -> Bool {
-    return right.contains(left)
+func ∈<T: Equatable> (lhs: T, rhs: [T]) -> Bool {
+    return rhs.contains(lhs)
 }
 
-func ∈<T> (left: T, right: Set<T>) -> Bool {
-    return right.contains(left)
+func ∈<T> (lhs: T, rhs: Set<T>) -> Bool {
+    return rhs.contains(lhs)
 }
 
 // MARK: Set Non-Membership
 
 infix operator ∉ : ComparisonPrecedence
-func ∉<T: Equatable> (left: T, right: [T]) -> Bool {
-    return ¬(left ∈ right)
+func ∉<T: Equatable> (lhs: T, rhs: [T]) -> Bool {
+    return ¬(lhs ∈ rhs)
 }
 
-func ∉<T> (left: T, right: Set<T>) -> Bool {
-    return ¬(left ∈ right)
+func ∉<T> (lhs: T, rhs: Set<T>) -> Bool {
+    return ¬(lhs ∈ rhs)
 }
 
 // MARK: Converse Set Membership
 
 infix operator ∋ : ComparisonPrecedence
-func ∋<T: Equatable> (left: [T], right: T) -> Bool {
-    return right ∈ left
+func ∋<T: Equatable> (lhs: [T], rhs: T) -> Bool {
+    return rhs ∈ lhs
 }
 
-func ∋<T> (left: Set<T>, right: T) -> Bool {
-    return right ∈ left
+func ∋<T> (lhs: Set<T>, rhs: T) -> Bool {
+    return rhs ∈ lhs
 }
 
 // MARK: Converse Set Non-Membership
 
 infix operator ∌ : ComparisonPrecedence
-func ∌<T: Equatable> (left: [T], right: T) -> Bool {
-    return right ∉ left
+func ∌<T: Equatable> (lhs: [T], rhs: T) -> Bool {
+    return rhs ∉ lhs
 }
 
-func ∌<T> (left: Set<T>, right: T) -> Bool {
-    return right ∉ left
+func ∌<T> (lhs: Set<T>, rhs: T) -> Bool {
+    return rhs ∉ lhs
 }
 
 // MARK: Set Intersection
 
 infix operator ∩ : ComparisonPrecedence
-func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
+func ∩<T: Equatable> (lhs: [T], rhs: [T]) -> [T] {
     var intersection: [T] = []
-    for value in left {
-        if value ∈ right {
+    for value in lhs {
+        if value ∈ rhs {
             intersection.append(value)
         }
     }
@@ -56,16 +56,16 @@ func ∩<T: Equatable> (left: [T], right: [T]) -> [T] {
     return intersection
 }
 
-func ∩<T> (left: Set<T>, right: Set<T>) -> Set<T> {
-    return left.intersection(right)
+func ∩<T> (lhs: Set<T>, rhs: Set<T>) -> Set<T> {
+    return lhs.intersection(rhs)
 }
 
 // MARK: Set Union
 
 infix operator ∪ : ComparisonPrecedence
-func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
+func ∪<T: Equatable> (lhs: [T], rhs: [T]) -> [T] {
     var union: [T] = []
-    for value in left + right {
+    for value in lhs + rhs {
         if ¬(value ∈ union) {
             union.append(value)
         }
@@ -74,27 +74,27 @@ func ∪<T: Equatable> (left: [T], right: [T]) -> [T] {
     return union
 }
 
-func ∪<T> (left: Set<T>, right: Set<T>) -> Set<T> {
-    return left.union(right)
+func ∪<T> (lhs: Set<T>, rhs: Set<T>) -> Set<T> {
+    return lhs.union(rhs)
 }
 
 // MARK: Subset
 
 infix operator ⊆ : ComparisonPrecedence
-func ⊆<T: Equatable> (left: [T], right: [T]) -> Bool {
-    return left == right || (left ⊂ right)
+func ⊆<T: Equatable> (lhs: [T], rhs: [T]) -> Bool {
+    return lhs == rhs || (lhs ⊂ rhs)
 }
 
-func ⊆<T> (left: Set<T>, right: Set<T>) -> Bool {
-    return left.isSubset(of: right)
+func ⊆<T> (lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return lhs.isSubset(of: rhs)
 }
 
 // MARK: Proper Subset
 
 infix operator ⊂ : ComparisonPrecedence
-func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
-    for value in left {
-        if ¬(value ∈ right) {
+func ⊂<T: Equatable> (lhs: [T], rhs: [T]) -> Bool {
+    for value in lhs {
+        if ¬(value ∈ rhs) {
             return false
         }
     }
@@ -102,50 +102,50 @@ func ⊂<T: Equatable> (left: [T], right: [T]) -> Bool {
     return true
 }
 
-func ⊂<T> (left: Set<T>, right: Set<T>) -> Bool {
-    return left.isStrictSubset(of: right)
+func ⊂<T> (lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return lhs.isStrictSubset(of: rhs)
 }
 
 // MARK: Not A Subset Of
 
 infix operator ⊄ : ComparisonPrecedence
-func ⊄<T: Equatable> (left: [T], right: [T]) -> Bool {
-    return ¬(left ⊂ right)
+func ⊄<T: Equatable> (lhs: [T], rhs: [T]) -> Bool {
+    return ¬(lhs ⊂ rhs)
 }
 
-func ⊄<T> (left: Set<T>, right: Set<T>) -> Bool {
-    return ¬(left ⊂ right)
+func ⊄<T> (lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return ¬(lhs ⊂ rhs)
 }
 
 // MARK: Superset
 
 infix operator ⊇ : ComparisonPrecedence
-func ⊇<T: Equatable> (left: [T], right: [T]) -> Bool {
-    return right ⊆ left
+func ⊇<T: Equatable> (lhs: [T], rhs: [T]) -> Bool {
+    return rhs ⊆ lhs
 }
 
-func ⊇<T> (left: Set<T>, right: Set<T>) -> Bool {
-    return right ⊆ left
+func ⊇<T> (lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return rhs ⊆ lhs
 }
 
 // MARK: Proper Superset
 
 infix operator ⊃ : ComparisonPrecedence
-func ⊃<T: Equatable> (left: [T], right: [T]) -> Bool {
-    return right ⊂ left
+func ⊃<T: Equatable> (lhs: [T], rhs: [T]) -> Bool {
+    return rhs ⊂ lhs
 }
 
-func ⊃<T> (left: Set<T>, right: Set<T>) -> Bool {
-    return right ⊂ left
+func ⊃<T> (lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return rhs ⊂ lhs
 }
 
 // MARK: Not A Superset Of
 
 infix operator ⊅ : ComparisonPrecedence
-func ⊅<T: Equatable> (left: [T], right: [T]) -> Bool {
-    return ¬(left ⊃ right)
+func ⊅<T: Equatable> (lhs: [T], rhs: [T]) -> Bool {
+    return ¬(lhs ⊃ rhs)
 }
 
-func ⊅<T> (left: Set<T>, right: Set<T>) -> Bool {
-    return ¬(left ⊃ right)
+func ⊅<T> (lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return ¬(lhs ⊃ rhs)
 }

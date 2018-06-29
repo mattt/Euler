@@ -3,12 +3,12 @@ import Foundation
 // MARK: Dot Product
 
 infix operator ⋅
-func ⋅ (left: [Double], right: [Double]) -> Double {
-    precondition(left.count == right.count, "arguments must have same count")
+func ⋅ (lhs: [Double], rhs: [Double]) -> Double {
+    precondition(lhs.count == rhs.count, "arguments must have same count")
     
     var product: [Double] = []
-    for (index, _) in left.enumerated() {
-        let (a, b) = (left[index], right[index])
+    for (index, _) in lhs.enumerated() {
+        let (a, b) = (lhs[index], rhs[index])
         product.append(a * b)
     }
     
@@ -17,10 +17,10 @@ func ⋅ (left: [Double], right: [Double]) -> Double {
 
 // MARK: Cross Product
 
-func × (left: (Double, Double, Double), right: (Double, Double, Double)) -> (Double, Double, Double) {
-    let a = left.1 * right.2 - left.2 * right.1
-    let b = left.2 * right.0 - left.0 * right.2
-    let c = left.0 * right.1 - left.1 * right.0
+func × (lhs: (Double, Double, Double), rhs: (Double, Double, Double)) -> (Double, Double, Double) {
+    let a = lhs.1 * rhs.2 - lhs.2 * rhs.1
+    let b = lhs.2 * rhs.0 - lhs.0 * rhs.2
+    let c = lhs.0 * rhs.1 - lhs.1 * rhs.0
     
     return (a, b, c)
 }
@@ -35,6 +35,6 @@ prefix func ‖ (vector: [Double]) -> Double {
 // MARK: Angle
 
 infix operator ⦡
-func ⦡ (left: [Double], right: [Double]) -> Double {
-    return acos((left ⋅ right) / (‖left * ‖right))
+func ⦡ (lhs: [Double], rhs: [Double]) -> Double {
+    return acos((lhs ⋅ rhs) / (‖lhs * ‖rhs))
 }

@@ -3,20 +3,20 @@ import Foundation
 // MARK: Multiplication
 
 infix operator × : MultiplicationPrecedence
-func × (left: Double, right: Double) -> Double {
-    return left * right
+func × (lhs: Double, rhs: Double) -> Double {
+    return lhs * rhs
 }
 
 // MARK: Division
 
 infix operator ÷ : MultiplicationPrecedence
-func ÷ (left: Double, right: Double) -> Double {
-    return left / right
+func ÷ (lhs: Double, rhs: Double) -> Double {
+    return lhs / rhs
 }
 
 infix operator ∕ : MultiplicationPrecedence
-func ∕ (left: Double, right: Double) -> Double {
-    return left / right
+func ∕ (lhs: Double, rhs: Double) -> Double {
+    return lhs / rhs
 }
 
 // MARK: Square Root
@@ -43,8 +43,8 @@ prefix func ∜ (number: Double) -> Double {
 // MARK: Plus / Minus
 
 infix operator ± : AdditionPrecedence
-func ± (left: Double, right: Double) -> (Double, Double) {
-    return (left + right, left - right)
+func ± (lhs: Double, rhs: Double) -> (Double, Double) {
+    return (lhs + rhs, lhs - rhs)
 }
 
 prefix operator ±
@@ -55,8 +55,8 @@ prefix func ± (value: Double) -> (Double, Double) {
 // MARK: Minus / Plus
 
 infix operator ∓ : AdditionPrecedence
-func ∓ (left: Double, right: Double) -> (Double, Double) {
-    return (left - right, left + right)
+func ∓ (lhs: Double, rhs: Double) -> (Double, Double) {
+    return (lhs - rhs, lhs + rhs)
 }
 
 prefix operator ∓
@@ -67,13 +67,13 @@ prefix func ∓ (value: Double) -> (Double, Double) {
 // MARK: Divides
 
 infix operator ∣ : MultiplicationPrecedence
-func ∣ (left: Int, right: Int) -> Bool {
-    return left % right == 0
+func ∣ (lhs: Int, rhs: Int) -> Bool {
+    return lhs % rhs == 0
 }
 
 // MARK: Does Not Divide
 
 infix operator ∤ : MultiplicationPrecedence
-func ∤ (left: Int, right: Int) -> Bool {
-    return ¬(left ∣ right)
+func ∤ (lhs: Int, rhs: Int) -> Bool {
+    return ¬(lhs ∣ rhs)
 }
