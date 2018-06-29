@@ -89,7 +89,7 @@ public prefix func ∓ <T>(value: T) -> (T, T) where T : Numeric {
 
 infix operator ∣ : MultiplicationPrecedence
 public func ∣ <T>(lhs: T, rhs: T) -> Bool where T : SignedInteger & UnsignedInteger {
-    return lhs % rhs == 0
+    return lhs == rhs || lhs % rhs == 0
 }
 
 // MARK: Does Not Divide
