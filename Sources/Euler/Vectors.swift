@@ -3,10 +3,10 @@ import Foundation
 // MARK: Dot Product
 
 infix operator ⋅
-public func ⋅ (lhs: [Double], rhs: [Double]) -> Double {
+public func ⋅ <T>(lhs: [T], rhs: [T]) -> T where T : Numeric & ExpressibleByIntegerLiteral {
     precondition(lhs.count == rhs.count, "arguments must have same count")
     
-    var product: [Double] = []
+    var product: [T] = []
     for (index, _) in lhs.enumerated() {
         let (a, b) = (lhs[index], rhs[index])
         product.append(a * b)
@@ -17,7 +17,7 @@ public func ⋅ (lhs: [Double], rhs: [Double]) -> Double {
 
 // MARK: Cross Product
 
-public func × (lhs: (Double, Double, Double), rhs: (Double, Double, Double)) -> (Double, Double, Double) {
+public func × <T>(lhs: (T, T, T), rhs: (T, T, T)) -> (T, T, T) where T : Numeric {
     let a = lhs.1 * rhs.2 - lhs.2 * rhs.1
     let b = lhs.2 * rhs.0 - lhs.0 * rhs.2
     let c = lhs.0 * rhs.1 - lhs.1 * rhs.0
