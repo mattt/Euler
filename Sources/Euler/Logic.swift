@@ -61,18 +61,18 @@ func ↑ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
 // MARK: Logical NOR
 
 infix operator ⊽ : LogicalDisjunctionPrecedence
-func ⊽ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ⊽ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return ¬(lhs ∨ rhs())
 }
 
 infix operator ↓ : LogicalDisjunctionPrecedence
-func ↓ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ↓ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return ¬(lhs ∨ rhs())
 }
 
 // MARK: Logical Assertion
 
 prefix operator ⊦
-prefix func ⊦ (condition: @autoclosure () -> Bool) {
+public prefix func ⊦ (condition: @autoclosure () -> Bool) {
     assert(condition(), "Assertion Failed")
 }
