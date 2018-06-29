@@ -1,60 +1,60 @@
 // MARK: Negation
 
 prefix operator ¬
-prefix func ¬ (value: Bool) -> Bool {
+public prefix func ¬ (value: Bool) -> Bool {
     return !value
 }
 
 prefix operator ~
-prefix func ~ (value: Bool) -> Bool {
+public prefix func ~ (value: Bool) -> Bool {
     return !value
 }
 
 // MARK: Logical Conjunction
 
 infix operator ∧ : LogicalConjunctionPrecedence
-func ∧ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ∧ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return lhs && rhs()
 }
 
 // MARK: Logical Disjunction
 
 infix operator ∨ : LogicalDisjunctionPrecedence
-func ∨ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ∨ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return lhs || rhs()
 }
 
 // MARK: Logical XOR
 
 infix operator ⊻ : LogicalDisjunctionPrecedence
-func ⊻ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ⊻ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return lhs != rhs()
 }
 
 infix operator ⊕ : LogicalDisjunctionPrecedence
-func ⊕ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ⊕ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return lhs != rhs()
 }
 
 infix operator ↮ : LogicalDisjunctionPrecedence
-func ↮ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ↮ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return lhs != rhs()
 }
 
 infix operator ≢ : LogicalDisjunctionPrecedence
-func ≢ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ≢ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return lhs != rhs()
 }
 
 // MARK: Logical NAND
 
 infix operator ⊼ : LogicalConjunctionPrecedence
-func ⊼ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ⊼ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return ¬(lhs ∧ rhs())
 }
 
 infix operator ↑ : LogicalConjunctionPrecedence
-func ↑ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
+public func ↑ (lhs: Bool, rhs: @autoclosure () -> Bool) -> Bool {
     return ¬(lhs ∧ rhs())
 }
 
