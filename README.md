@@ -96,4 +96,4 @@ MIT
 
 ## Contact
 
-Mattt ([@mattt](https://twitter.com/mattt)
+Mattt ([@mattt](https://twitter.com/mattt))
