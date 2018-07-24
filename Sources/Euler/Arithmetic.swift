@@ -14,7 +14,11 @@ public func ÷ <T>(lhs: T, rhs: T) -> T where T : FloatingPoint {
     return lhs / rhs
 }
 
-public func ÷ <T>(lhs: T, rhs: T) -> T where T : SignedInteger & UnsignedInteger {
+public func ÷ <T>(lhs: T, rhs: T) -> T where T : SignedInteger {
+    return lhs / rhs
+}
+
+public func ÷ <T>(lhs: T, rhs: T) -> T where T : UnsignedInteger {
     return lhs / rhs
 }
 
@@ -23,7 +27,11 @@ public func ∕ <T>(lhs: T, rhs: T) -> T where T : FloatingPoint {
     return lhs / rhs
 }
 
-public func ∕ <T>(lhs: T, rhs: T) -> T where T : SignedInteger & UnsignedInteger {
+public func ∕ <T>(lhs: T, rhs: T) -> T where T : SignedInteger {
+    return lhs / rhs
+}
+
+public func ∕ <T>(lhs: T, rhs: T) -> T where T : UnsignedInteger {
     return lhs / rhs
 }
 
@@ -88,13 +96,21 @@ public prefix func ∓ <T>(value: T) -> (T, T) where T : Numeric {
 // MARK: Divides
 
 infix operator ∣ : MultiplicationPrecedence
-public func ∣ <T>(lhs: T, rhs: T) -> Bool where T : SignedInteger & UnsignedInteger {
+public func ∣ <T>(lhs: T, rhs: T) -> Bool where T : SignedInteger {
+    return lhs == rhs || lhs % rhs == 0
+}
+
+public func ∣ <T>(lhs: T, rhs: T) -> Bool where T : UnsignedInteger {
     return lhs == rhs || lhs % rhs == 0
 }
 
 // MARK: Does Not Divide
 
 infix operator ∤ : MultiplicationPrecedence
-public func ∤ <T>(lhs: T, rhs: T) -> Bool where T : SignedInteger & UnsignedInteger {
+public func ∤ <T>(lhs: T, rhs: T) -> Bool where T : SignedInteger {
+    return ¬(lhs ∣ rhs)
+}
+
+public func ∤ <T>(lhs: T, rhs: T) -> Bool where T : UnsignedInteger {
     return ¬(lhs ∣ rhs)
 }
