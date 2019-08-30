@@ -31,6 +31,7 @@
 		F831CEA920E6708300FBFF55 /* Calculus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F831CEA820E6708300FBFF55 /* Calculus.swift */; };
 		F831CEAB20E6709000FBFF55 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F831CEAA20E6709000FBFF55 /* Functions.swift */; };
 		F831CEAD20E6737D00FBFF55 /* LogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F831CEAC20E6737D00FBFF55 /* LogicTests.swift */; };
+		F854C093231990D100E3418B /* ArithmeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854C092231990D100E3418B /* ArithmeticTests.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_40 /* ConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* ConstantsTests.swift */; };
 		OBJ_41 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
@@ -67,6 +68,7 @@
 		F831CEA820E6708300FBFF55 /* Calculus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculus.swift; sourceTree = "<group>"; };
 		F831CEAA20E6709000FBFF55 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		F831CEAC20E6737D00FBFF55 /* LogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicTests.swift; sourceTree = "<group>"; };
+		F854C092231990D100E3418B /* ArithmeticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticTests.swift; sourceTree = "<group>"; };
 		OBJ_12 /* ConstantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				OBJ_12 /* ConstantsTests.swift */,
 				F831CEAC20E6737D00FBFF55 /* LogicTests.swift */,
 				OBJ_13 /* XCTestManifests.swift */,
+				F854C092231990D100E3418B /* ArithmeticTests.swift */,
 			);
 			name = EulerTests;
 			path = Tests/EulerTests;
@@ -217,6 +220,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = OBJ_5;
@@ -262,6 +266,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_40 /* ConstantsTests.swift in Sources */,
+				F854C093231990D100E3418B /* ArithmeticTests.swift in Sources */,
 				OBJ_41 /* XCTestManifests.swift in Sources */,
 				F831CEAD20E6737D00FBFF55 /* LogicTests.swift in Sources */,
 			);
