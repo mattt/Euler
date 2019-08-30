@@ -36,6 +36,7 @@
 		F854C09923199ED500E3418B /* SequencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854C09823199ED500E3418B /* SequencesTests.swift */; };
 		F854C09B23199FB200E3418B /* VectorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854C09A23199FB200E3418B /* VectorsTests.swift */; };
 		F854C09D2319A4E800E3418B /* ComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854C09C2319A4E800E3418B /* ComparisonTests.swift */; };
+		F854C09F2319B2F900E3418B /* CalculusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854C09E2319B2F900E3418B /* CalculusTests.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_40 /* ConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* ConstantsTests.swift */; };
 		OBJ_41 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
@@ -77,6 +78,7 @@
 		F854C09823199ED500E3418B /* SequencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencesTests.swift; sourceTree = "<group>"; };
 		F854C09A23199FB200E3418B /* VectorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorsTests.swift; sourceTree = "<group>"; };
 		F854C09C2319A4E800E3418B /* ComparisonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonTests.swift; sourceTree = "<group>"; };
+		F854C09E2319B2F900E3418B /* CalculusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculusTests.swift; sourceTree = "<group>"; };
 		OBJ_12 /* ConstantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				F854C09823199ED500E3418B /* SequencesTests.swift */,
 				F854C09A23199FB200E3418B /* VectorsTests.swift */,
 				F854C09C2319A4E800E3418B /* ComparisonTests.swift */,
+				F854C09E2319B2F900E3418B /* CalculusTests.swift */,
 				OBJ_13 /* XCTestManifests.swift */,
 			);
 			name = EulerTests;
@@ -278,6 +281,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_40 /* ConstantsTests.swift in Sources */,
+				F854C09F2319B2F900E3418B /* CalculusTests.swift in Sources */,
 				F854C0972319992B00E3418B /* SetsTests.swift in Sources */,
 				F854C093231990D100E3418B /* ArithmeticTests.swift in Sources */,
 				OBJ_41 /* XCTestManifests.swift in Sources */,

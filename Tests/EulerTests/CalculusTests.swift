@@ -1,69 +1,16 @@
 import XCTest
 @testable import Euler
 
-final class ComparisonTests: XCTestCase {
-    func testEquality() {
-        XCTAssert(true ⩵ true)
+final class CalculusTests: XCTestCase {
+    func testDerivative() {
+        let f: (Double) -> Double = sin
+        for x in stride(from: 0, to: 2 * π, by: π / 8) {
+            XCTAssertEqual((f′)(x), cos(x), accuracy: 1e-6)
+        }
     }
 
-    func testInequality() {
-        XCTAssert(true ≠ false)
-    }
-
-    func testLessThanOrEqualTo() {
-        XCTAssert(!(1 ≤ -1))
-        XCTAssert(1 ≤ 2)
-        XCTAssert(2 ≤ 2)
-        XCTAssert(!(3 ≤ 2))
-    }
-
-    func testLessThanAndNotEqualTo() {
-        XCTAssert(!(1 ≨ -1))
-        XCTAssert(1 ≨ 2)
-        XCTAssert(!(2 ≨ 2))
-    }
-
-    func testGreaterThanOrEqualTo() {
-        XCTAssert(!(-1 ≩ 1))
-        XCTAssert(1 ≥ 0)
-        XCTAssert(1 ≥ 1)
-        XCTAssert(!(1 ≥ 2))
-    }
-
-    func testGreaterThanAndNotEqualTo() {
-        XCTAssert(1 ≩ 0)
-        XCTAssert(!(1 ≩ 1))
-        XCTAssert(!(1 ≩ 2))
-    }
-
-    func testBetween() {
-        XCTAssert(3 ≬ (1, 5))
-        XCTAssert(!(0 ≬ (1, 5)))
-        XCTAssert(!(7 ≬ (1, 5)))
-
-        XCTAssert(3 ≬ 1...5)
-        XCTAssert(!(0 ≬ 1...5))
-        XCTAssert(!(7 ≬ 1...5))
-
-        XCTAssert(3 ≬ 1...5)
-        XCTAssert(!(0 ≬ 1..<5))
-        XCTAssert(!(5 ≬ 1..<5))
-        XCTAssert(!(7 ≬ 1..<5))
-    }
-
-    func testApproximateEquality() {
-        XCTAssert(!(1 ≈ -1))
-        XCTAssert(1 ≈ 1)
-        XCTAssert(1.nextUp ≈ 1)
-        XCTAssert(1 ≈ 1.nextDown)
-        XCTAssert(!(1.nextUp ≈ 1.nextDown))
-    }
-
-    func testApproximateInequality() {
-        XCTAssert(1 ≉ -1)
-        XCTAssert(!(1 ≉ 1))
-        XCTAssert(!(1.nextUp ≉ 1))
-        XCTAssert(!(1 ≉ 1.nextDown))
-        XCTAssert(1.nextUp ≉ 1.nextDown)
+    func testIntegral() {
+        let f: (Double) -> Double = sin
+        XCTAssertEqual((0, π)∫f, 2, accuracy: 1e-3)
     }
 }
