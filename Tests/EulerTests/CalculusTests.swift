@@ -12,5 +12,6 @@ final class CalculusTests: XCTestCase {
     func testIntegral() {
         let f: (Double) -> Double = sin
         XCTAssertEqual((0, π)∫f, 2, accuracy: 1e-3)
+        XCTAssertEqual((0...π)∫f, 2, accuracy: 1e-3)
     }
 }

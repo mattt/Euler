@@ -22,3 +22,7 @@ public func ∫(lhs: (a: Double, b: Double), rhs: (Double) -> (Double)) -> Doubl
         return $0 + coefficient * rhs(lhs.a + Double($1) * h)
         } + rhs(lhs.b)
 }
+
+public func ∫(lhs: ClosedRange<Double>, rhs: (Double) -> (Double)) -> Double {
+    return (lhs.lowerBound, lhs.upperBound) ∫ rhs
+}
