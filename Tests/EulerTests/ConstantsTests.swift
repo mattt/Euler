@@ -14,9 +14,14 @@ final class ConstantsTests: XCTestCase {
         XCTAssertEqual(𝑒, M_E)
     }
 
+    func testEpsilon() {
+        XCTAssertEqual(ε, Double.ulpOfOne)
+    }
+
     static var allTests = [
         ("testPi", testPi),
         ("testTau", testTau),
-        ("testE", testE)
+        ("testE", testE),
+        ("testEpsilon", testEpsilon)
     ]
 }

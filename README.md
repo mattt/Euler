@@ -54,6 +54,7 @@ for x in stride(from: 0, to: 4 * π, by: π / 8) {
 - `π` - [Pi](http://en.wikipedia.org/wiki/Pi)
 - `𝝉` - [Tau](http://en.wikipedia.org/wiki/Tau_%282%CF%80%29#tau)
 - `𝑒` - [e](http://en.wikipedia.org/wiki/E_%28mathematical_constant%29)
+- `ε` - [Machine Epsilon](https://en.wikipedia.org/wiki/Machine_epsilon)
 
 ### Logic
 
