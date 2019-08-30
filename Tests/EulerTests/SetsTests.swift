@@ -65,4 +65,19 @@ final class SetsTests: XCTestCase {
         XCTAssert(Array(farmAnimals) ⊅ Array(cityAnimals))
         XCTAssert(farmAnimals ⊅ cityAnimals)
     }
+
+    static var allTests = [
+        ("testSetMembership", testSetMembership),
+        ("testSetNonMembership", testSetNonMembership),
+        ("testConverseSetMembership", testConverseSetMembership),
+        ("testConverseSetNonMembership", testConverseSetNonMembership),
+        ("testConverseSetIntersection", testConverseSetIntersection),
+        ("testConverseSetUnion", testConverseSetUnion),
+        ("testSubset", testSubset),
+        ("testProperSubset", testProperSubset),
+        ("testNotASubSetOf", testNotASubSetOf),
+        ("testSuperset", testSuperset),
+        ("testProperSuperset", testProperSuperset),
+        ("testNotASupersetOf", testNotASupersetOf)
+    ]
 }

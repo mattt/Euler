@@ -66,4 +66,16 @@ final class ComparisonTests: XCTestCase {
         XCTAssert(!(1 ≉ 1.nextDown))
         XCTAssert(1.nextUp ≉ 1.nextDown)
     }
+
+    static var allTests = [
+        ("testEquality", testEquality),
+        ("testInequality", testInequality),
+        ("testLessThanOrEqualTo", testLessThanOrEqualTo),
+        ("testLessThanAndNotEqualTo", testLessThanAndNotEqualTo),
+        ("testGreaterThanOrEqualTo", testGreaterThanOrEqualTo),
+        ("testGreaterThanAndNotEqualTo", testGreaterThanAndNotEqualTo),
+        ("testBetween", testBetween),
+        ("testApproximateEquality", testApproximateEquality),
+        ("testApproximateInequality", testApproximateInequality)
+    ]
 }

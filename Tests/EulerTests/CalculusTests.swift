@@ -14,4 +14,9 @@ final class CalculusTests: XCTestCase {
         XCTAssertEqual((0, π)∫f, 2, accuracy: 1e-3)
         XCTAssertEqual((0...π)∫f, 2, accuracy: 1e-3)
     }
+
+    static var allTests = [
+        ("testDerivative", testDerivative),
+        ("testIntegral", testIntegral)
+    ]
 }

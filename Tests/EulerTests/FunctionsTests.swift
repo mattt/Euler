@@ -10,4 +10,8 @@ final class FunctionsTests: XCTestCase {
             XCTAssertEqual((f ∘ g)(x), sin(cos(x)))
         }
     }
+
+    static var allTests = [
+        ("testComposition", testComposition)
+    ]
 }

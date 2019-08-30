@@ -24,4 +24,11 @@ final class VectorsTests: XCTestCase {
         XCTAssertEqual((([1] as [Double]) ⦡ ([1] as [Double])), 0)
         XCTAssertEqual((([0, 1] as [Double]) ⦡ ([1, 0] as [Double])), π/2)
     }
+
+    static var allTests = [
+        ("testDotProduct", testDotProduct),
+        ("testCrossProduct", testCrossProduct),
+        ("testNorm", testNorm),
+        ("testAngle", testAngle)
+    ]
 }

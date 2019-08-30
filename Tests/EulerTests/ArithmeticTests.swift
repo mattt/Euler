@@ -68,4 +68,16 @@ final class ArithmeticTests: XCTestCase {
         XCTAssertEqual((7 as Int) ∣ (5 as Int), 7 % 5 == 0)
         XCTAssertEqual((7 as UInt) ∣ (5 as UInt), 7 % 5 == 0)
     }
+
+    static var allTests = [
+        ("testMultiplication", testMultiplication),
+        ("testDivision", testDivision),
+        ("testSquareRoot", testSquareRoot),
+        ("testCubeRoot", testCubeRoot),
+        ("testTesseractRoot", testTesseractRoot),
+        ("testPlusMinus", testPlusMinus),
+        ("testMinusPlus", testMinusPlus),
+        ("testDivides", testDivides),
+        ("testDoesNotDivide", testDoesNotDivide)
+    ]
 }
