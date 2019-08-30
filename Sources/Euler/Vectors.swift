@@ -28,11 +28,11 @@ public func × <T>(lhs: (T, T, T), rhs: (T, T, T)) -> (T, T, T) where T : Numeri
 // Mark: Norm
 
 prefix operator ‖
-public prefix func ‖ (vector: [Double]) -> Double {
+public prefix func ‖ <S: Sequence>(vector: S) -> Double where S.Element == Double {
     return √(∑vector.map({$0 * $0}))
 }
 
-public prefix func ‖ (vector: [Float]) -> Float {
+public prefix func ‖ <S: Sequence>(vector: S) -> Float where S.Element == Float {
     return √(∑vector.map({$0 * $0}))
 }
 
@@ -40,9 +40,11 @@ public prefix func ‖ (vector: [Float]) -> Float {
 
 infix operator ⦡
 public func ⦡ (lhs: [Double], rhs: [Double]) -> Double {
+    precondition(lhs.count == rhs.count, "arguments must have same count")
     return acos((lhs ⋅ rhs) / (‖lhs * ‖rhs))
 }
 
 public func ⦡ (lhs: [Float], rhs: [Float]) -> Float {
+    precondition(lhs.count == rhs.count, "arguments must have same count")
     return acos((lhs ⋅ rhs) / (‖lhs * ‖rhs))
 }
