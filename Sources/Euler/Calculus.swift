@@ -18,9 +18,9 @@ public func ∫(lhs: (lowerBound: Double, upperBound: Double), rhs: (Double) -> 
     let h = (lhs.upperBound - lhs.lowerBound) / Double(n)
     
     return (h / 3.0) * (1..<n).reduce(rhs(lhs.lowerBound)) {
-        let coefficient = $1 % 2 == 0 ? 4.0 : 2.0
+        let coefficient = $1.isMultiple(of: 2) ? 4.0 : 2.0
         return $0 + coefficient * rhs(lhs.lowerBound + Double($1) * h)
-        } + rhs(lhs.upperBound)
+    } + rhs(lhs.upperBound)
 }
 
 public func ∫(lhs: ClosedRange<Double>, rhs: (Double) -> (Double)) -> Double {
