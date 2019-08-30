@@ -13,14 +13,14 @@ public postfix func ′(function: @escaping (Double) -> (Double)) -> (Double) ->
 // MARK: Integral
 
 infix operator ∫ : MultiplicationPrecedence
-public func ∫(lhs: (a: Double, b: Double), rhs: (Double) -> (Double)) -> Double {
+public func ∫(lhs: (lowerBound: Double, upperBound: Double), rhs: (Double) -> (Double)) -> Double {
     let n = Int(1e2 + 1)
-    let h = (lhs.b - lhs.a) / Double(n)
+    let h = (lhs.upperBound - lhs.lowerBound) / Double(n)
     
-    return (h / 3.0) * (1..<n).reduce(rhs(lhs.a)) {
+    return (h / 3.0) * (1..<n).reduce(rhs(lhs.lowerBound)) {
         let coefficient = $1 % 2 == 0 ? 4.0 : 2.0
-        return $0 + coefficient * rhs(lhs.a + Double($1) * h)
-        } + rhs(lhs.b)
+        return $0 + coefficient * rhs(lhs.lowerBound + Double($1) * h)
+        } + rhs(lhs.upperBound)
 }
 
 public func ∫(lhs: ClosedRange<Double>, rhs: (Double) -> (Double)) -> Double {
