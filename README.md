@@ -120,7 +120,7 @@ for x in stride(from: 0, to: 4 * π, by: π / 8) {
 ## Calculus
 
 - `′` - [Derivative](http://en.wikipedia.org/wiki/Derivative#Lagrange.27s_notation)
-- `∫` - [Integral (Definite & Indefinite)](http://en.wikipedia.org/wiki/Integral)
+- `∫` - [Integral](http://en.wikipedia.org/wiki/Integral)
 
 ## Functions
 

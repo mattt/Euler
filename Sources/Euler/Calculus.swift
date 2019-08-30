@@ -10,7 +10,7 @@ public postfix func ′(function: @escaping (Double) -> (Double)) -> (Double) ->
     }
 }
 
-// MARK: Definite Integral
+// MARK: Integral
 
 infix operator ∫ : MultiplicationPrecedence
 public func ∫(lhs: (a: Double, b: Double), rhs: (Double) -> (Double)) -> Double {
@@ -21,13 +21,4 @@ public func ∫(lhs: (a: Double, b: Double), rhs: (Double) -> (Double)) -> Doubl
         let coefficient = $1 % 2 == 0 ? 4.0 : 2.0
         return $0 + coefficient * rhs(lhs.a + Double($1) * h)
         } + rhs(lhs.b)
-}
-
-// MARK: Indefinite Integral / Antiderivative
-
-prefix operator ∫
-public prefix func ∫(function: @escaping (Double) -> (Double)) -> (Double) -> (Double) {
-    return { x in
-        return (0, x)∫function
-    }
 }
