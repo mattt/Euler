@@ -14,6 +14,39 @@ Euler is much better-suited to a Playground, where it could be used for teaching
 
 ---
 
+## Example Usage
+
+```swift
+import Foundation
+import Euler
+import PlaygroundSupport
+
+𝑒 // 2.718281828459045
+
+¬true // false
+
+3 × 4 // 12
+
+let prime = [2, 3, 5, 7, 11]
+let fibonacci = [1, 1, 2, 3, 5, 8, 13]
+prime ∩ fibonacci // {2, 3, 5}
+
+∑[1, 2, 3, 4, 5] // 15
+
+[1, 2] ⋅ [3, 4] // 11
+
+7 ≠ 9 // true
+
+var f: (Double) -> Double = sin
+let g: (Double) -> Double = cos
+
+for x in stride(from: 0, to: 4 * π, by: π / 8) {
+    (f ∘ g)(x) // ∿∿∿
+}
+
+(f′)(π) // -1
+```
+
 ## Inventory
 
 ### Mathematical Constants
