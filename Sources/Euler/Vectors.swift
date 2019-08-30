@@ -5,14 +5,7 @@ import Foundation
 infix operator ⋅
 public func ⋅ <T>(lhs: [T], rhs: [T]) -> T where T : Numeric & ExpressibleByIntegerLiteral {
     precondition(lhs.count == rhs.count, "arguments must have same count")
-    
-    var product: [T] = []
-    for (index, _) in lhs.enumerated() {
-        let (a, b) = (lhs[index], rhs[index])
-        product.append(a * b)
-    }
-    
-    return ∑product
+    return ∑zip(lhs, rhs).map(×)
 }
 
 // MARK: Cross Product
