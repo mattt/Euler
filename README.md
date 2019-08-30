@@ -1,5 +1,9 @@
 # Euler
 
+[![Build Status][ci status badge]][ci status]
+[![License][license badge]][license]
+[![Swift Version][swift version badge]][swift version]
+
 Euler uses [custom operators in the "Math Symbols"](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID418) character set to implement functions using traditional mathematical notation.
 
 **Please keep in mind that this is not intended or recommended for production.** Custom operators of any breed are ripe for misuse and abuse, and should be used with as much care and caution as you would something like method swizzling or complex macros.
@@ -97,3 +101,10 @@ MIT
 ## Contact
 
 Mattt ([@mattt](https://twitter.com/mattt))
+
+[ci status]: https://github.com/mattt/Euler/actions
+[ci status badge]: https://github.com/mattt/Euler/workflows/CI/badge.svg
+[license]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[swift version]: https://swift.org/download/
+[swift version badge]: http://img.shields.io/badge/swift%20version-5.0-orange.svg?style=flat
