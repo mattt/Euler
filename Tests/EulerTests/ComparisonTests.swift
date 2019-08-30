@@ -40,6 +40,15 @@ final class ComparisonTests: XCTestCase {
         XCTAssert(3 ≬ (1, 5))
         XCTAssert(!(0 ≬ (1, 5)))
         XCTAssert(!(7 ≬ (1, 5)))
+
+        XCTAssert(3 ≬ 1...5)
+        XCTAssert(!(0 ≬ 1...5))
+        XCTAssert(!(7 ≬ 1...5))
+
+        XCTAssert(3 ≬ 1...5)
+        XCTAssert(!(0 ≬ 1..<5))
+        XCTAssert(!(5 ≬ 1..<5))
+        XCTAssert(!(7 ≬ 1..<5))
     }
 
     func testApproximateEquality() {

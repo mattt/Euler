@@ -49,6 +49,14 @@ public func ≬ <T>(lhs: T, rhs: (T, T)) -> Bool where T : Comparable {
     return lhs > rhs.0 && lhs < rhs.1
 }
 
+public func ≬ <T>(lhs: T, rhs: Range<T>) -> Bool where T : Comparable {
+    return rhs.contains(lhs)
+}
+
+public func ≬ <T>(lhs: T, rhs: ClosedRange<T>) -> Bool where T : Comparable {
+    return rhs.contains(lhs)
+}
+
 // MARK: Approximate Equality
 
 infix operator ≈ : ComparisonPrecedence
